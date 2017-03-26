@@ -14,6 +14,12 @@
 		4774E1DF1E878EB8000D0182 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4774E1DD1E878EB8000D0182 /* LaunchScreen.storyboard */; };
 		4774E1EA1E878EB9000D0182 /* RoastmeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4774E1E91E878EB9000D0182 /* RoastmeTests.swift */; };
 		4774E1F51E878EB9000D0182 /* RoastmeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4774E1F41E878EB9000D0182 /* RoastmeUITests.swift */; };
+		5DB5ADA7579DE6F31F22E5F4 /* Pods_RoastmeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C33A38F0A2A7FEAF7D2A74 /* Pods_RoastmeUITests.framework */; };
+		82B612D61E879A400001CC6E /* RoastAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B612D51E879A400001CC6E /* RoastAPI.swift */; };
+		82B612D81E87A35E0001CC6E /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B612D71E87A35E0001CC6E /* TokenResponse.swift */; };
+		82B612DA1E87A4320001CC6E /* LoginErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B612D91E87A4320001CC6E /* LoginErrorResponse.swift */; };
+		965F62213891AFE1BCA36A04 /* Pods_RoastmeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3202173415AC59ED464A61 /* Pods_RoastmeTests.framework */; };
+		9E3D99912ED6B971D1FCBC58 /* Pods_Roastme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D84EC3F5A8CDE2AD3E56C71 /* Pods_Roastme.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C3202173415AC59ED464A61 /* Pods_RoastmeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoastmeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4774E1D11E878EB8000D0182 /* Roastme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roastme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4774E1D41E878EB8000D0182 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4774E1D61E878EB8000D0182 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +54,17 @@
 		4774E1F01E878EB9000D0182 /* RoastmeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoastmeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4774E1F41E878EB9000D0182 /* RoastmeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoastmeUITests.swift; sourceTree = "<group>"; };
 		4774E1F61E878EB9000D0182 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50B53A9774C8927B07C8F161 /* Pods-Roastme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roastme.release.xcconfig"; path = "Pods/Target Support Files/Pods-Roastme/Pods-Roastme.release.xcconfig"; sourceTree = "<group>"; };
+		5D84EC3F5A8CDE2AD3E56C71 /* Pods_Roastme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Roastme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81E8DA00029EF08FE2197620 /* Pods-RoastmeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoastmeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoastmeUITests/Pods-RoastmeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		82B612D51E879A400001CC6E /* RoastAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoastAPI.swift; sourceTree = "<group>"; };
+		82B612D71E87A35E0001CC6E /* TokenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
+		82B612D91E87A4320001CC6E /* LoginErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginErrorResponse.swift; sourceTree = "<group>"; };
+		9261B11E1D64CA9C0DB91168 /* Pods-RoastmeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoastmeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoastmeTests/Pods-RoastmeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AE89E81940B0F25CB348E787 /* Pods-Roastme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roastme.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Roastme/Pods-Roastme.debug.xcconfig"; sourceTree = "<group>"; };
+		BACF865ADF0B787D3CBB17DA /* Pods-RoastmeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoastmeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoastmeTests/Pods-RoastmeTests.release.xcconfig"; sourceTree = "<group>"; };
+		C7C33A38F0A2A7FEAF7D2A74 /* Pods_RoastmeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoastmeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F03010D5BFE9BCCFCBB4C2C8 /* Pods-RoastmeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoastmeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoastmeUITests/Pods-RoastmeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E3D99912ED6B971D1FCBC58 /* Pods_Roastme.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				965F62213891AFE1BCA36A04 /* Pods_RoastmeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +88,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DB5ADA7579DE6F31F22E5F4 /* Pods_RoastmeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32C37774FB5B2B194C8B3F7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D84EC3F5A8CDE2AD3E56C71 /* Pods_Roastme.framework */,
+				1C3202173415AC59ED464A61 /* Pods_RoastmeTests.framework */,
+				C7C33A38F0A2A7FEAF7D2A74 /* Pods_RoastmeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4774E1C81E878EB8000D0182 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +112,8 @@
 				4774E1E81E878EB9000D0182 /* RoastmeTests */,
 				4774E1F31E878EB9000D0182 /* RoastmeUITests */,
 				4774E1D21E878EB8000D0182 /* Products */,
+				FDDF0E92977D182C75040EEF /* Pods */,
+				32C37774FB5B2B194C8B3F7B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +130,15 @@
 		4774E1D31E878EB8000D0182 /* Roastme */ = {
 			isa = PBXGroup;
 			children = (
+				82B612D91E87A4320001CC6E /* LoginErrorResponse.swift */,
+				82B612D71E87A35E0001CC6E /* TokenResponse.swift */,
 				4774E1D41E878EB8000D0182 /* AppDelegate.swift */,
 				4774E1D61E878EB8000D0182 /* ViewController.swift */,
 				4774E1D81E878EB8000D0182 /* Main.storyboard */,
 				4774E1DB1E878EB8000D0182 /* Assets.xcassets */,
 				4774E1DD1E878EB8000D0182 /* LaunchScreen.storyboard */,
 				4774E1E01E878EB8000D0182 /* Info.plist */,
+				82B612D51E879A400001CC6E /* RoastAPI.swift */,
 			);
 			path = Roastme;
 			sourceTree = "<group>";
@@ -125,6 +161,19 @@
 			path = RoastmeUITests;
 			sourceTree = "<group>";
 		};
+		FDDF0E92977D182C75040EEF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE89E81940B0F25CB348E787 /* Pods-Roastme.debug.xcconfig */,
+				50B53A9774C8927B07C8F161 /* Pods-Roastme.release.xcconfig */,
+				9261B11E1D64CA9C0DB91168 /* Pods-RoastmeTests.debug.xcconfig */,
+				BACF865ADF0B787D3CBB17DA /* Pods-RoastmeTests.release.xcconfig */,
+				F03010D5BFE9BCCFCBB4C2C8 /* Pods-RoastmeUITests.debug.xcconfig */,
+				81E8DA00029EF08FE2197620 /* Pods-RoastmeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +181,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4774E1F91E878EB9000D0182 /* Build configuration list for PBXNativeTarget "Roastme" */;
 			buildPhases = (
+				20DC8B6758BE3A429BA8C8C4 /* [CP] Check Pods Manifest.lock */,
 				4774E1CD1E878EB8000D0182 /* Sources */,
 				4774E1CE1E878EB8000D0182 /* Frameworks */,
 				4774E1CF1E878EB8000D0182 /* Resources */,
+				5F18C7F6A46B6A6484B24952 /* [CP] Embed Pods Frameworks */,
+				3EB42A9382A3F25171F32246 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +201,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4774E1FC1E878EB9000D0182 /* Build configuration list for PBXNativeTarget "RoastmeTests" */;
 			buildPhases = (
+				B2CDD4326661B3D9D15E4C1A /* [CP] Check Pods Manifest.lock */,
 				4774E1E11E878EB9000D0182 /* Sources */,
 				4774E1E21E878EB9000D0182 /* Frameworks */,
 				4774E1E31E878EB9000D0182 /* Resources */,
+				D5F639433ADBBBE2B397034E /* [CP] Embed Pods Frameworks */,
+				A4CFF7D5D59A08946D77935C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4774E1FF1E878EB9000D0182 /* Build configuration list for PBXNativeTarget "RoastmeUITests" */;
 			buildPhases = (
+				225221324899F40BC4B3E7F6 /* [CP] Check Pods Manifest.lock */,
 				4774E1EC1E878EB9000D0182 /* Sources */,
 				4774E1ED1E878EB9000D0182 /* Frameworks */,
 				4774E1EE1E878EB9000D0182 /* Resources */,
+				3222BE219478CC84A3E90E2B /* [CP] Embed Pods Frameworks */,
+				1F2B487670C5AD9FDC7F09D2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,12 +312,153 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1F2B487670C5AD9FDC7F09D2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RoastmeUITests/Pods-RoastmeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		20DC8B6758BE3A429BA8C8C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		225221324899F40BC4B3E7F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3222BE219478CC84A3E90E2B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RoastmeUITests/Pods-RoastmeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3EB42A9382A3F25171F32246 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Roastme/Pods-Roastme-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F18C7F6A46B6A6484B24952 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Roastme/Pods-Roastme-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4CFF7D5D59A08946D77935C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RoastmeTests/Pods-RoastmeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2CDD4326661B3D9D15E4C1A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D5F639433ADBBBE2B397034E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RoastmeTests/Pods-RoastmeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4774E1CD1E878EB8000D0182 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82B612D61E879A400001CC6E /* RoastAPI.swift in Sources */,
 				4774E1D71E878EB8000D0182 /* ViewController.swift in Sources */,
+				82B612DA1E87A4320001CC6E /* LoginErrorResponse.swift in Sources */,
+				82B612D81E87A35E0001CC6E /* TokenResponse.swift in Sources */,
 				4774E1D51E878EB8000D0182 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +609,7 @@
 		};
 		4774E1FA1E878EB9000D0182 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE89E81940B0F25CB348E787 /* Pods-Roastme.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Roastme/Info.plist;
@@ -422,6 +622,7 @@
 		};
 		4774E1FB1E878EB9000D0182 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50B53A9774C8927B07C8F161 /* Pods-Roastme.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Roastme/Info.plist;
@@ -434,6 +635,7 @@
 		};
 		4774E1FD1E878EB9000D0182 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9261B11E1D64CA9C0DB91168 /* Pods-RoastmeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -448,6 +650,7 @@
 		};
 		4774E1FE1E878EB9000D0182 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BACF865ADF0B787D3CBB17DA /* Pods-RoastmeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -462,6 +665,7 @@
 		};
 		4774E2001E878EB9000D0182 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F03010D5BFE9BCCFCBB4C2C8 /* Pods-RoastmeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = RoastmeUITests/Info.plist;
@@ -475,6 +679,7 @@
 		};
 		4774E2011E878EB9000D0182 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81E8DA00029EF08FE2197620 /* Pods-RoastmeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = RoastmeUITests/Info.plist;
@@ -505,6 +710,7 @@
 				4774E1FB1E878EB9000D0182 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4774E1FC1E878EB9000D0182 /* Build configuration list for PBXNativeTarget "RoastmeTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +719,7 @@
 				4774E1FE1E878EB9000D0182 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4774E1FF1E878EB9000D0182 /* Build configuration list for PBXNativeTarget "RoastmeUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +728,7 @@
 				4774E2011E878EB9000D0182 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

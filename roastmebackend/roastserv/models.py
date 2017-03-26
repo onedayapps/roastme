@@ -10,17 +10,17 @@ class RoastmeUser(models.Model):
     spiciness = models.IntegerField(default=0) #sauce received
     seasoning = models.IntegerField(default=0)
 
+class Roast(models.Model):
+    roastee = models.ForeignKey(User)
+    picture = models.ImageField(upload_to="roast")
+    caption = models.CharField(max_length=256)
+    creationDate = models.DateTimeField(auto_now_add=True)
+
 class RoastComment(models.Model):
     content = models.CharField(max_length=256)
     upvotes = models.IntegerField(default=0)
     sauce = models.IntegerField(default=0)
     salt = models.IntegerField(default=0)
     roastee = models.ForeignKey(RoastmeUser)
+    roast = models.ForeignKey(Roast)
     commentDate = models.DateTimeField(auto_now_add=True)
-
-class Roast(models.Model):
-    roastee = models.ForeignKey(RoastmeUser)
-    picture = models.ImageField()
-    roastComment = models.ForeignKey(RoastComment)
-    creationDate = models.DateTimeField(auto_now_add=True)
-    caption = models.CharField(max_length=256)
