@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Roast
 
-# Register your models here.
+@admin.register(Roast)
+class RoastAdmin(admin.ModelAdmin):
+    list_display = ('roastee', 'creationDate', 'caption')
