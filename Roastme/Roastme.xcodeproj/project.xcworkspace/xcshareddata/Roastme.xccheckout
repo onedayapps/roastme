@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>797D6F87-BD29-4087-A407-7D06A2672E7A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>32F49DDCF447A9C9B986D4C3C43E43F60FBBA5A4</key>
+		<string>https://github.com/onedayapps/roastme.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Roastme/Roastme.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>32F49DDCF447A9C9B986D4C3C43E43F60FBBA5A4</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/onedayapps/roastme.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>32F49DDCF447A9C9B986D4C3C43E43F60FBBA5A4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>32F49DDCF447A9C9B986D4C3C43E43F60FBBA5A4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>roastme</string>
+		</dict>
+	</array>
+</dict>
+</plist>
