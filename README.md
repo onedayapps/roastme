@@ -15,9 +15,11 @@ Install the following
   -> touch ~/.bash_profile
   -> open -a TextEdit.app ~/.bash_profile
   -> Paste this into the file and save: 
-    export WORKON_HOME=$HOME/.virtualenvs
-    export PROJECT_HOME=$HOME/Devel
-    source /usr/local/bin/virtualenvwrapper.sh
+  <ul>
+    <li>export WORKON_HOME=$HOME/.virtualenvs</li>
+    <li>export PROJECT_HOME=$HOME/Devel</li>
+    <li>source /usr/local/bin/virtualenvwrapper.sh</li>
+  </ul>
     
 ### Environment
 
