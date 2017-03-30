@@ -1,13 +1,17 @@
+from django.contrib.auth.models import User, Group
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.files import File
 
 from rest_framework.parsers import FormParser, MultiPartParser
-from rest_framework import permissions
+from rest_framework import permissions, viewsets
 
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
+
+from .serializers import UserSerializer, RoastSerializer, GroupSerializer
+
 import time
 import os
 
@@ -39,3 +43,16 @@ class CreateRoastView(APIView):
         roast.save()
 
         return Response({'msg': 'success'}, status.HTTP_200_OK)
+
+class UserViewSet(viewsets.ModelViewSet):
+
+    queryset = User.objects.all().order_by('-date_joined')
+    serializer_class = UserSerializer
+
+class GroupViewSet(viewsets.ModelViewSet):
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
+
+class RoastViewSet(viewsets.ModelViewSet):
+    queryset = Roast.objects.all()
+    serializer_class = RoastSerializer

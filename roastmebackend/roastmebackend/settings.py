@@ -24,7 +24,7 @@ SECRET_KEY = 'wbq3&&5h8y6k_c$=b2s=6@&%$*ewcr4ol^-^+gzd2y$pw8k^=q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.83']
+ALLOWED_HOSTS = ['192.168.1.83', '192.168.20.128']
 
 # Application definition
 
@@ -68,6 +68,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAdminUser',
+    ],
+    'PAGE_SIZE': 10
+}
 
 ROOT_URLCONF = 'roastmebackend.urls'
 
