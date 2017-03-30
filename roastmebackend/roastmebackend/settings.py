@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ['192.168.1.83', '192.168.20.128']
 # Application definition
 
 AUTHENTICATION_BACKENDS = (
-    'fretserv.auth.TokenAuthenticationBackend',
+    'roastserv.auth.TokenAuthenticationBackend',
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 )
