@@ -32,10 +32,11 @@ Install the following
 ### Database
 
 1. Install postgresql: `brew install postgresql`
-2. `createdb roastme`
-3. `psql -d roastme`
-4. `CREATE USER roastmedev WITH PASSWORD 'getroastedson';`
-5. `GRANT ALL PRIVILEGES ON DATABASE roastme to roastmedev;`
+2. 'pg_ctl -D /usr/local/var/postgres start'
+3. `createdb roastme`
+4. `psql -d roastme`
+5. `CREATE USER roastmedev WITH PASSWORD 'getroastedson';`
+6. `GRANT ALL PRIVILEGES ON DATABASE roastme to roastmedev;`
 
 ### Setup Django Web Server
 
