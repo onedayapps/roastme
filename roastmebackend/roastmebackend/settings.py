@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+from roastserv.utils import get_local_ip
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,7 +25,7 @@ SECRET_KEY = 'wbq3&&5h8y6k_c$=b2s=6@&%$*ewcr4ol^-^+gzd2y$pw8k^=q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.83', '192.168.20.128']
+ALLOWED_HOSTS = [get_local_ip()]
 
 # Application definition
 
