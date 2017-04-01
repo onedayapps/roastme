@@ -7,7 +7,7 @@ target 'Roastme' do
 
   # Pods for Roastme
   pod 'Alamofire', '~> 4.4.0'
-  pod 'SwiftyJSON', '~> 2.3.2'
+  pod 'SwiftyJSON', '~> 3.1'
 
   target 'RoastmeTests' do
     inherit! :search_paths

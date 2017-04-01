@@ -42,3 +42,7 @@ Install the following
 
 1. `python manage.py migrate`
 2. `python manage.py runserver ip:port`
+
+### iOS App
+
+1. `pod install`
