@@ -19,9 +19,9 @@ import SwiftyJSON
  * Note: Alamofire will resend set cookies on subsequent requests which will mess up pure token authentication
  *       On requests with no Authorization token, avoid sending cookies to avoid SessionAuthentication
  */
-class FretservAPI {
-    static let apiRoot = "https://roastme.com/"
-    //static let apiRoot = "http://192.168.1.83:8000/"
+class RoastAPI {
+    //static let apiRoot = "https://roastme.com/"
+    static let apiRoot = "http://192.168.20.128:8000/"
     
     static let serversDown = "Roastme's servers are down. Try again later!"
     static let generalError = "Oh snap! Something went wrong. Try again later!"
@@ -30,7 +30,7 @@ class FretservAPI {
      * Login a user
      * auth/login/
      */
-    static func loginUser(username:String, password:String, callback: (TokenResponse?, LoginErrorResponse?) -> Void) {
+    static func loginUser(username:String, password:String, callback: @escaping (TokenResponse?, LoginErrorResponse?) -> Void) {
         let url = apiRoot + "auth/login/"
         
         // clear cookies to avoid SessionAuthentication
@@ -42,17 +42,17 @@ class FretservAPI {
             "password": password
         ]
         
-        Alamofire.request(.POST, url, headers: headers, parameters: parameters)
+        Alamofire.request(url, method: .post, parameters: parameters, headers: headers)
             .validate()
             .responseJSON { response in
                 switch response.result {
-                case .Success:
+                case .success:
                     if let value = response.result.value {
                         let json = JSON(value)
                         let tokenResponse = TokenResponse(token: json["key"].string!)
                         callback(tokenResponse, nil)
                     }
-                case .Failure:
+                case .failure:
                     if let httpStatusCode = response.response?.statusCode {
                         switch(httpStatusCode) {
                         case 400:
@@ -70,7 +70,7 @@ class FretservAPI {
     /*
      * Create a new roast
      */
-    static func createRoast(authToken:String, roastImage:UIImage, caption:String) {
+    /*static func createRoast(authToken:String, roastImage:UIImage, caption:String) {
         let url = apiRoot + "roastserv/createroast/"
         let headers = [
             "Authorization": "Token " + authToken
@@ -106,5 +106,5 @@ class FretservAPI {
                     }
             }
         )
-    }
+    }*/
 }
