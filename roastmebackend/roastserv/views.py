@@ -8,14 +8,14 @@ from rest_framework import permissions, viewsets
 
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework import status
+from rest_framework import status, generics
 
-from .serializers import UserSerializer, RoastSerializer, GroupSerializer
+from .serializers import UserSerializer, RoastSerializer, GroupSerializer, RoastCommentSerializer, NewRoastCommentSerializer
 
 import time
 import os
 
-from .models import Roast
+from .models import Roast, RoastComment
 
 def index(request):
     return HttpResponse("Roastme")
@@ -44,6 +44,16 @@ class CreateRoastView(APIView):
 
         return Response({'msg': 'success'}, status.HTTP_200_OK)
 
+class NewRoastComment(generics.CreateAPIView):
+    """
+    curl -X PUT -H "Authorization: Token c7eb4a877716f7d630ed34a3aed640ff0b360a7f" -f "content=firstcomment"  "roast=1"
+    """
+
+    query_set = RoastComment.objects.all()
+    serializer_class = NewRoastCommentSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+
 class UserViewSet(viewsets.ModelViewSet):
 
     queryset = User.objects.all().order_by('-date_joined')
@@ -56,3 +66,13 @@ class GroupViewSet(viewsets.ModelViewSet):
 class RoastViewSet(viewsets.ModelViewSet):
     queryset = Roast.objects.all()
     serializer_class = RoastSerializer
+
+class RoastCommentList(generics.ListCreateAPIView):
+    serializer_class = RoastCommentSerializer
+    def get_queryset(self):
+        queryset =  RoastComment.objects.all().filter(roast__id=request.query_params.get('rid', None))
+
+# Dont Need this right now
+#class RoastCommentDetail(generics.RetrieveUpdateDestroyAPIView):
+#   queryset = RoastComment.objects.all()
+#  serializer_class = RoastCommentSerializer
