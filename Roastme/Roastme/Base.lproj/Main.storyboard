@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jsZ-tT-9AB">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1010" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jnG-OK-Cp7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,6 +11,57 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="gCi-NT-PUf">
+            <objects>
+                <viewController id="jnG-OK-Cp7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LCE-MJ-Izg"/>
+                        <viewControllerLayoutGuide type="bottom" id="lD9-bO-5gG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4JH-Du-ebv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ShR-hl-qxS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q6q-3d-j4U">
+                                <rect key="frame" x="67" y="58" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username or Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CWN-A9-Ed4">
+                                <rect key="frame" x="67" y="238" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tXH-FH-pAH">
+                                <rect key="frame" x="67" y="300" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7RR-hp-bgp">
+                                <rect key="frame" x="154" y="417" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Log in"/>
+                                <connections>
+                                    <segue destination="jsZ-tT-9AB" kind="show" id="8xB-S7-sAD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IY1-Gy-B2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="584.79999999999995" y="-10.344827586206897"/>
+        </scene>
         <!--GrillMe-->
         <scene sceneID="DgG-Tx-b7E">
             <objects>
@@ -29,77 +80,54 @@
                                     <constraint firstAttribute="width" secondItem="U3f-Dm-OaE" secondAttribute="height" multiplier="1:1" id="PBw-Ak-KxS"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gtx-qr-hz0">
-                                <rect key="frame" x="31" y="391" width="313" height="266"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpG-HJ-UDT">
                                 <rect key="frame" x="31" y="360" width="313" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awH-Oj-vcl">
-                                <rect key="frame" x="16" y="20" width="40" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="FEc-su-4yz"/>
-                                    <constraint firstAttribute="height" constant="30" id="v8O-jm-HG6"/>
-                                </constraints>
-                                <state key="normal" title="Noti"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2BL-DZ-drt">
+                                <rect key="frame" x="31" y="381" width="313" height="266"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gtx-qr-hz0">
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="266"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableView>
+                                </subviews>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFH-qb-IoT">
+                                <rect key="frame" x="21" y="22" width="29" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="+"/>
                                 <connections>
-                                    <segue destination="Tzi-tD-XzQ" kind="show" id="arj-Xh-HCn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXn-81-sEZ">
-                                <rect key="frame" x="176" y="20" width="40" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="CrO-vH-5bJ"/>
-                                    <constraint firstAttribute="width" constant="40" id="MJB-7b-DsF"/>
-                                </constraints>
-                                <state key="normal" title="Smoke"/>
-                                <connections>
-                                    <segue destination="oOH-RJ-mWk" kind="show" id="DxW-JG-up8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="az3-Ct-hGj">
-                                <rect key="frame" x="319" y="20" width="40" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="VgN-ha-dJm"/>
-                                    <constraint firstAttribute="width" constant="40" id="omx-Z2-cjY"/>
-                                </constraints>
-                                <state key="normal" title="Profile"/>
-                                <connections>
-                                    <segue destination="cMh-K1-Duv" kind="show" id="NgQ-gJ-59V"/>
+                                    <segue destination="cMh-K1-Duv" kind="show" id="zax-iM-aNg"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="FYN-y8-yWA" firstAttribute="top" secondItem="gtx-qr-hz0" secondAttribute="bottom" constant="10" id="6yV-nM-b2B"/>
-                            <constraint firstItem="az3-Ct-hGj" firstAttribute="top" secondItem="pGO-1Z-yBL" secondAttribute="bottom" id="B9T-k8-lRK"/>
-                            <constraint firstItem="eXn-81-sEZ" firstAttribute="top" secondItem="pGO-1Z-yBL" secondAttribute="bottom" id="DcN-xw-5gz"/>
                             <constraint firstItem="U3f-Dm-OaE" firstAttribute="leading" secondItem="fOC-Bl-5XS" secondAttribute="leadingMargin" constant="5" id="MSg-YK-oJ1"/>
-                            <constraint firstItem="awH-Oj-vcl" firstAttribute="leading" secondItem="fOC-Bl-5XS" secondAttribute="leadingMargin" id="Ogv-06-Bwc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="az3-Ct-hGj" secondAttribute="trailing" id="Qzn-fx-esN"/>
-                            <constraint firstItem="awH-Oj-vcl" firstAttribute="top" secondItem="pGO-1Z-yBL" secondAttribute="bottom" id="Wlg-Yv-tHy"/>
-                            <constraint firstItem="gtx-qr-hz0" firstAttribute="top" secondItem="rpG-HJ-UDT" secondAttribute="bottom" constant="10" id="XLT-1c-KCz"/>
                             <constraint firstItem="rpG-HJ-UDT" firstAttribute="leading" secondItem="fOC-Bl-5XS" secondAttribute="leadingMargin" constant="15" id="YBO-1Z-K2a"/>
-                            <constraint firstItem="gtx-qr-hz0" firstAttribute="leading" secondItem="fOC-Bl-5XS" secondAttribute="leadingMargin" constant="15" id="YSe-nQ-dNa"/>
-                            <constraint firstItem="eXn-81-sEZ" firstAttribute="leading" secondItem="awH-Oj-vcl" secondAttribute="trailing" constant="120" id="b8K-zX-xWs"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gtx-qr-hz0" secondAttribute="trailing" constant="15" id="ewm-aD-kzm"/>
                             <constraint firstItem="rpG-HJ-UDT" firstAttribute="top" secondItem="U3f-Dm-OaE" secondAttribute="bottom" constant="5" id="fcU-f5-pMB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="U3f-Dm-OaE" secondAttribute="trailing" constant="5" id="r5u-AE-o2z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rpG-HJ-UDT" secondAttribute="trailing" constant="15" id="rcA-0M-Sth"/>
                             <constraint firstItem="U3f-Dm-OaE" firstAttribute="top" secondItem="pGO-1Z-yBL" secondAttribute="bottom" constant="2" id="wF1-wn-Izq"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="3vS-pY-Tax" appends="YES" id="TUA-dy-6P8"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="view" destination="fOC-Bl-5XS" id="8Pl-QR-GEq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFo-Ni-6wJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="3vS-pY-Tax"/>
             </objects>
-            <point key="canvasLocation" x="1455" y="-11"/>
+            <point key="canvasLocation" x="1453.5999999999999" y="-11.244377811094454"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="8em-VS-ytI">
@@ -119,30 +147,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAB-Zd-jFu">
-                                <rect key="frame" x="16" y="20" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Grill"/>
-                                <connections>
-                                    <segue destination="jsZ-tT-9AB" kind="show" id="Sej-yv-0mn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbr-Uq-egj">
-                                <rect key="frame" x="164" y="20" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Smoke"/>
-                                <connections>
-                                    <segue destination="oOH-RJ-mWk" kind="show" id="XmT-8k-m19"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tzh-lI-bLc">
-                                <rect key="frame" x="313" y="20" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Profile"/>
-                                <connections>
-                                    <segue destination="cMh-K1-Duv" kind="show" id="RsE-sa-aTa"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.10566986239999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -154,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fff-A9-e13" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2570" y="-403"/>
+            <point key="canvasLocation" x="2633" y="-1153"/>
         </scene>
         <!--Smokehouse-->
         <scene sceneID="ZU3-eU-twq">
@@ -175,42 +179,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpW-RF-NcU">
-                                <rect key="frame" x="16" y="20" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Grill"/>
-                                <connections>
-                                    <segue destination="jsZ-tT-9AB" kind="show" id="jXY-tK-386"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ons-9Z-Fh1">
-                                <rect key="frame" x="164" y="20" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Noti"/>
-                                <connections>
-                                    <segue destination="Tzi-tD-XzQ" kind="show" id="xis-7g-e0H"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcx-1n-Qxa">
-                                <rect key="frame" x="313" y="20" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Profile"/>
-                                <connections>
-                                    <segue destination="cMh-K1-Duv" kind="show" id="lhd-ub-r8o"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.30968184677745725" green="1" blue="0.18198927346628635" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JLD-eC-afF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2980" y="550"/>
+            <point key="canvasLocation" x="3367" y="-1155"/>
         </scene>
-        <!--Profile-->
+        <!--Roast Creator-->
         <scene sceneID="lnk-jd-2wr">
             <objects>
-                <viewController storyboardIdentifier="Profile" title="Profile" id="cMh-K1-Duv" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Profile" title="Roast Creator" id="cMh-K1-Duv" customClass="CreateRoastController" customModule="Roastme" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xfP-fQ-jfG"/>
                         <viewControllerLayoutGuide type="bottom" id="5X1-sr-Vzn"/>
@@ -219,50 +199,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6V-OM-0ax">
-                                <rect key="frame" x="155" y="97" width="64" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kre-FK-TDa">
+                                <rect key="frame" x="80" y="579" width="214" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd6-l6-nlU">
-                                <rect key="frame" x="16" y="20" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.11759441573024607" green="0.22939021513413005" blue="0.99824309349060059" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Roast Me">
+                                    <color key="titleColor" red="0.99824309349060059" green="0.14573662993454711" blue="0.18202410963955962" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.99824309349060059" green="0.14298866636216878" blue="0.13742318284954383" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IoX-vS-SjN">
+                                <rect key="frame" x="41" y="443" width="291" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Grill"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vD-Aw-cHb">
+                                <rect key="frame" x="16" y="11" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Grill">
+                                    <color key="titleColor" red="0.1175944157" green="0.22939021509999999" blue="0.99824309349999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <segue destination="jsZ-tT-9AB" kind="show" id="Jje-d9-ewe"/>
+                                    <segue destination="jsZ-tT-9AB" kind="show" id="YsG-co-IhA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bd6-Nj-c7J">
-                                <rect key="frame" x="164" y="20" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ra7-Sf-vhy">
+                                <rect key="frame" x="136" y="175" width="100" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Noti"/>
+                                <color key="backgroundColor" red="0.99824309349060059" green="0.0" blue="0.010249625812265673" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Add Picture">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <segue destination="Tzi-tD-XzQ" kind="show" id="n1K-pz-oI0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCh-Bu-9F4">
-                                <rect key="frame" x="313" y="20" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Smoke"/>
-                                <connections>
-                                    <segue destination="oOH-RJ-mWk" kind="show" id="LTt-I3-4LI"/>
+                                    <action selector="uploadRoastPicture:" destination="cMh-K1-Duv" eventType="touchUpInside" id="4Cl-Dl-kfR"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.18334913315177981" green="0.1964448678693006" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99824309349060059" green="0.86163712017741245" blue="0.75576670439700311" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="0.72662578383642318" blue="0.64473111053604981" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgl-Zh-qm2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2221.5999999999999" y="1311.9940029985009"/>
+            <point key="canvasLocation" x="2408.8000000000002" y="-10.344827586206897"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Sej-yv-0mn"/>
-        <segue reference="arj-Xh-HCn"/>
-        <segue reference="DxW-JG-up8"/>
-        <segue reference="NgQ-gJ-59V"/>
+        <segue reference="YsG-co-IhA"/>
     </inferredMetricsTieBreakers>
 </document>
