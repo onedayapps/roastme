@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -104,14 +105,6 @@
                                 <state key="normal" title="+"/>
                                 <connections>
                                     <segue destination="cMh-K1-Duv" kind="show" id="zax-iM-aNg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jl-Zy-fTg">
-                                <rect key="frame" x="73" y="156" width="102" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SideMenu"/>
-                                <connections>
-                                    <segue destination="oPH-nn-Nhf" kind="presentation" id="txp-sz-BMj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -341,20 +334,34 @@
                                     <segue destination="jsZ-tT-9AB" kind="show" id="YsG-co-IhA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ra7-Sf-vhy">
-                                <rect key="frame" x="136" y="175" width="100" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oie-D9-Hhy">
+                                <rect key="frame" x="137" y="163" width="100" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99824309349060059" green="0.0" blue="0.010249625812265673" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <color key="tintColor" red="0.17965986913965326" green="1" blue="0.32848172387248953" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Add Picture">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="1" green="0.10802467179663044" blue="0.17219807431409251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="uploadRoastPicture:" destination="cMh-K1-Duv" eventType="touchUpInside" id="4Cl-Dl-kfR"/>
+                                    <action selector="uploadRoastPicture:" destination="cMh-K1-Duv" eventType="touchUpInside" id="NFP-cA-uDb"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="itQ-eF-J2v">
+                                <rect key="frame" x="66" y="70" width="240" height="337.5"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="itQ-eF-J2v" secondAttribute="height" multiplier="1:1" id="GEZ-xf-tCQ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.99824309349060059" green="0.86163712017741245" blue="0.75576670439700311" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="0.72662578383642318" blue="0.64473111053604981" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="itQ-eF-J2v" firstAttribute="width" secondItem="uIO-jF-jHY" secondAttribute="width" multiplier="0.9" id="5K7-Zu-6uL"/>
+                            <constraint firstItem="itQ-eF-J2v" firstAttribute="top" secondItem="xfP-fQ-jfG" secondAttribute="bottom" constant="50" id="ZmV-ng-LYd"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgl-Zh-qm2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -363,6 +370,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="t6A-4A-icc"/>
+        <segue reference="YsG-co-IhA"/>
     </inferredMetricsTieBreakers>
 </document>
