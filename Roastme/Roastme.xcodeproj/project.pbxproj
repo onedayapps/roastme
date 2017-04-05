@@ -20,6 +20,7 @@
 		82B612DA1E87A4320001CC6E /* LoginErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B612D91E87A4320001CC6E /* LoginErrorResponse.swift */; };
 		965F62213891AFE1BCA36A04 /* Pods_RoastmeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3202173415AC59ED464A61 /* Pods_RoastmeTests.framework */; };
 		9E3D99912ED6B971D1FCBC58 /* Pods_Roastme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D84EC3F5A8CDE2AD3E56C71 /* Pods_Roastme.framework */; };
+		AC44D7571E93363E003643AF /* CreateRoastController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC44D7561E93363E003643AF /* CreateRoastController.swift */; };
 		BA3EA8971E90C27A00C4F586 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3EA8961E90C27A00C4F586 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		82B612D71E87A35E0001CC6E /* TokenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		82B612D91E87A4320001CC6E /* LoginErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginErrorResponse.swift; sourceTree = "<group>"; };
 		9261B11E1D64CA9C0DB91168 /* Pods-RoastmeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoastmeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoastmeTests/Pods-RoastmeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AC44D7561E93363E003643AF /* CreateRoastController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoastController.swift; sourceTree = "<group>"; };
 		AE89E81940B0F25CB348E787 /* Pods-Roastme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roastme.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Roastme/Pods-Roastme.debug.xcconfig"; sourceTree = "<group>"; };
 		BA3EA8961E90C27A00C4F586 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BACF865ADF0B787D3CBB17DA /* Pods-RoastmeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoastmeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoastmeTests/Pods-RoastmeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				4774E1DD1E878EB8000D0182 /* LaunchScreen.storyboard */,
 				4774E1E01E878EB8000D0182 /* Info.plist */,
 				82B612D51E879A400001CC6E /* RoastAPI.swift */,
+				AC44D7561E93363E003643AF /* CreateRoastController.swift */,
 			);
 			path = Roastme;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				BA3EA8971E90C27A00C4F586 /* LoginViewController.swift in Sources */,
 				82B612D81E87A35E0001CC6E /* TokenResponse.swift in Sources */,
 				4774E1D51E878EB8000D0182 /* AppDelegate.swift in Sources */,
+				AC44D7571E93363E003643AF /* CreateRoastController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
