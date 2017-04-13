@@ -51,6 +51,14 @@
                                     <action selector="Login:" destination="jnG-OK-Cp7" eventType="touchUpInside" id="cYA-P3-MTm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hc-Ut-gbD">
+                                <rect key="frame" x="164" y="194" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Test"/>
+                                <connections>
+                                    <segue destination="jsZ-tT-9AB" kind="show" id="4pF-9s-bLz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     </view>
@@ -363,6 +371,9 @@
                             <constraint firstItem="itQ-eF-J2v" firstAttribute="top" secondItem="xfP-fQ-jfG" secondAttribute="bottom" constant="50" id="ZmV-ng-LYd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="previewImage" destination="itQ-eF-J2v" id="DMM-Rk-tep"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgl-Zh-qm2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
