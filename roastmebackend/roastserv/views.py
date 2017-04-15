@@ -67,6 +67,11 @@ class RoastViewSet(viewsets.ModelViewSet):
     queryset = Roast.objects.all()
     serializer_class = RoastSerializer
 
+class singleRoast(generics.CreateAPIView):
+    serializer_class = RoastSerializer
+    def get_queryset(self):
+        queryset = Roast.objects.all().filter(roast_id=request.query_params.get('rid', None))
+
 class RoastCommentList(generics.ListCreateAPIView):
     serializer_class = RoastCommentSerializer
     def get_queryset(self):

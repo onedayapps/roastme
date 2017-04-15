@@ -14,7 +14,9 @@ urlpatterns = [
     url(r'^', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^createroastcomment/', views.NewRoastComment.as_view(), name='createcomment'),
     url(r'^createroast/', views.CreateRoastView.as_view(), name='createroast'),
-    url(r'^roasts/(?P<rid>[0-9]+)/$', views.RoastCommentList.as_view())
+    url(r'^roasts/(?P<rid>[0-9]+)/$', views.singleRoast.as_view()),
+    url(r'^roastscomments/(?P<rid>[0-9]+)/$', views.RoastCommentList.as_view())
+
 ]
 
 
