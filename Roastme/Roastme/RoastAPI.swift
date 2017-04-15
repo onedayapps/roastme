@@ -110,6 +110,8 @@ class RoastAPI {
         )
     }*/
     
+    
+    
     static func getRoast(rid: String) {
        let url = apiRoot + "roastserv/roasts/" + rid
         Alamofire.request(url).responseJSON{ response in
@@ -118,17 +120,16 @@ class RoastAPI {
                 print("JSON: \(JSON)")
             }
         }
-        
     }
+    
     static func getRoastComments(rid: String) {
-        let url = apiRoot + "roastserv/roastscomments/" + rid
+        let url = apiRoot + "roastserv/comments/" + rid
         Alamofire.request(url).responseJSON{ response in
             print(response.result)
             if let JSON = response.result.value{
                 print("JSON: \(JSON)")
             }
         }
-        
     }
 
 }

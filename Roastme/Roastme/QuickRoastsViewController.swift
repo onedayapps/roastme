@@ -16,6 +16,7 @@ class QuickRoastsViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let roastID = "2"
         RoastAPI.getRoast(rid: roastID)
+        RoastAPI.getRoastComments(rid: roastID)
     }
     
     
