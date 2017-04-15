@@ -15,6 +15,7 @@ class LoginViewController:UIViewController{
 
     @IBOutlet weak var Username: UITextField!
     @IBOutlet weak var Password: UITextField!
+    public var token = ""
 
     @IBAction func Login(_ sender: Any) {
         let username = self.Username.text
@@ -24,7 +25,10 @@ class LoginViewController:UIViewController{
             (tokenResponse:TokenResponse?, loginErr:LoginErrorResponse?) in
             if tokenResponse != nil {
                 print(tokenResponse!.token)
-                self.performSegue(withIdentifier: self.ROAST_SEGUE_ID, sender: self)
+                self.token = tokenResponse!.token
+                self.performSegue(withIdentifier: self.ROAST_SEGUE_ID, sender: self)/*{
+                let currentToken = self.token
+                }*/
             } else {
                 print(loginErr?.credentialsErr)
             }

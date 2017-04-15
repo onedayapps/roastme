@@ -75,7 +75,7 @@
         <!--GrillMe-->
         <scene sceneID="DgG-Tx-b7E">
             <objects>
-                <viewController title="GrillMe" id="jsZ-tT-9AB" sceneMemberID="viewController">
+                <viewController title="GrillMe" id="jsZ-tT-9AB" customClass="QuickRoastsViewController" customModule="Roastme" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pGO-1Z-yBL"/>
                         <viewControllerLayoutGuide type="bottom" id="FYN-y8-yWA"/>
@@ -323,6 +323,9 @@
                                     <color key="titleColor" red="0.99824309349060059" green="0.14573662993454711" blue="0.18202410963955962" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.99824309349060059" green="0.14298866636216878" blue="0.13742318284954383" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="newRoast:" destination="cMh-K1-Duv" eventType="touchUpInside" id="fak-hD-OMy"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IoX-vS-SjN">
                                 <rect key="frame" x="41" y="443" width="291" height="128"/>
@@ -373,6 +376,7 @@
                     </view>
                     <connections>
                         <outlet property="previewImage" destination="itQ-eF-J2v" id="DMM-Rk-tep"/>
+                        <outlet property="roastCaption" destination="IoX-vS-SjN" id="pXD-2i-Nrb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgl-Zh-qm2" userLabel="First Responder" sceneMemberID="firstResponder"/>

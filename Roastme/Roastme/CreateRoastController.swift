@@ -9,10 +9,13 @@
 import Foundation
 import UIKit
 
+
 class CreateRoastController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
     @IBOutlet var previewImage: UIImageView!
-    
+    @IBOutlet var roastCaption: UITextView!
+    var currentToken:String?
+
     @IBAction func uploadRoastPicture(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
             let imagePicker = UIImagePickerController()
@@ -48,5 +51,14 @@ class CreateRoastController: UIViewController, UIImagePickerControllerDelegate, 
         // Dispose of any resources that can be recreated.
     }
     
-    
+   /*
+    @IBAction func newRoast(_ sender: UIButton) {
+        if roastCaption.text == ""{
+            //Error: Please add a caption.
+        } else if previewImage.image == nil{
+            //Error: Please add a picture.
+        } else{
+        RoastAPI.createRoast(authToken: currentToken!, roastImage: previewImage.image!, caption: roastCaption.text!)
+        }
+    }*/
 }

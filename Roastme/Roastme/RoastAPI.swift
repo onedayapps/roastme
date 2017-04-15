@@ -11,6 +11,8 @@ import Foundation
 import Foundation
 import Alamofire
 import SwiftyJSON
+import NetworkManager
+
 
 /*
  * Class with static members for each Frettable API call.
@@ -69,7 +71,7 @@ class RoastAPI {
     
     /*
      * Create a new roast
-     */
+    */
     /*static func createRoast(authToken:String, roastImage:UIImage, caption:String) {
         let url = apiRoot + "roastserv/createroast/"
         let headers = [
@@ -107,4 +109,26 @@ class RoastAPI {
             }
         )
     }*/
+    
+    static func getRoast(rid: String) {
+       let url = apiRoot + "roastserv/roasts/" + rid
+        Alamofire.request(url).responseJSON{ response in
+            print(response.result)
+            if let JSON = response.result.value{
+                print("JSON: \(JSON)")
+            }
+        }
+        
+    }
+    static func getRoastComments(rid: String) {
+        let url = apiRoot + "roastserv/roastscomments/" + rid
+        Alamofire.request(url).responseJSON{ response in
+            print(response.result)
+            if let JSON = response.result.value{
+                print("JSON: \(JSON)")
+            }
+        }
+        
+    }
+
 }
