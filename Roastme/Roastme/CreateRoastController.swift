@@ -14,7 +14,7 @@ class CreateRoastController: UIViewController, UIImagePickerControllerDelegate, 
 {
     @IBOutlet var previewImage: UIImageView!
     @IBOutlet var roastCaption: UITextView!
-    var currentToken:String?
+    let currentToken:String? = User.sharedInstance.authToken
 
     @IBAction func uploadRoastPicture(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
@@ -41,6 +41,8 @@ class CreateRoastController: UIViewController, UIImagePickerControllerDelegate, 
         override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+            print("I am the create roast token: ")
+            print(currentToken!)
     }
     
     

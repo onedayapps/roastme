@@ -15,6 +15,6 @@ class Roast{
     var caption: String?
     var creationDate: Date?
     
-    private class func roastFromResponse(_ response: DataResponse<Any>) -> result
+   // private class func roastFromResponse(_ response: DataResponse<Any>) -> result
     
 }

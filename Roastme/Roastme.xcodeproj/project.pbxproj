@@ -25,6 +25,7 @@
 		9E3D99912ED6B971D1FCBC58 /* Pods_Roastme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D84EC3F5A8CDE2AD3E56C71 /* Pods_Roastme.framework */; };
 		AC44D7571E93363E003643AF /* CreateRoastController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC44D7561E93363E003643AF /* CreateRoastController.swift */; };
 		BA3EA8971E90C27A00C4F586 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3EA8961E90C27A00C4F586 /* LoginViewController.swift */; };
+		BA5BAB151EB54F1700D1A9B9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5BAB141EB54F1700D1A9B9 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		AC44D7561E93363E003643AF /* CreateRoastController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoastController.swift; sourceTree = "<group>"; };
 		AE89E81940B0F25CB348E787 /* Pods-Roastme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roastme.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Roastme/Pods-Roastme.debug.xcconfig"; sourceTree = "<group>"; };
 		BA3EA8961E90C27A00C4F586 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BA5BAB141EB54F1700D1A9B9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BACF865ADF0B787D3CBB17DA /* Pods-RoastmeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoastmeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoastmeTests/Pods-RoastmeTests.release.xcconfig"; sourceTree = "<group>"; };
 		C7C33A38F0A2A7FEAF7D2A74 /* Pods_RoastmeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoastmeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F03010D5BFE9BCCFCBB4C2C8 /* Pods-RoastmeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoastmeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoastmeUITests/Pods-RoastmeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				4C75C4F71EA1D555005AF365 /* Roast.swift */,
 				4C75C4F91EA1D562005AF365 /* Comment.swift */,
 				AC44D7561E93363E003643AF /* CreateRoastController.swift */,
+				BA5BAB141EB54F1700D1A9B9 /* User.swift */,
 			);
 			path = Roastme;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				4C75C4F81EA1D555005AF365 /* Roast.swift in Sources */,
 				4774E1D51E878EB8000D0182 /* AppDelegate.swift in Sources */,
 				AC44D7571E93363E003643AF /* CreateRoastController.swift in Sources */,
+				BA5BAB151EB54F1700D1A9B9 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
