@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jnG-OK-Cp7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jnG-OK-Cp7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -75,7 +75,7 @@
         <!--GrillMe-->
         <scene sceneID="DgG-Tx-b7E">
             <objects>
-                <viewController title="GrillMe" id="jsZ-tT-9AB" customClass="QuickRoastsViewController" customModule="Roastme" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="GrillMe" id="jsZ-tT-9AB" customClass="QuickRoastsViewController" customModule="Roastme" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pGO-1Z-yBL"/>
                         <viewControllerLayoutGuide type="bottom" id="FYN-y8-yWA"/>
@@ -90,17 +90,11 @@
                                     <constraint firstAttribute="width" secondItem="U3f-Dm-OaE" secondAttribute="height" multiplier="1:1" id="PBw-Ak-KxS"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpG-HJ-UDT">
-                                <rect key="frame" x="31" y="360" width="313" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2BL-DZ-drt">
                                 <rect key="frame" x="31" y="381" width="313" height="266"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gtx-qr-hz0">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gtx-qr-hz0">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="266"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -115,13 +109,19 @@
                                     <segue destination="cMh-K1-Duv" kind="show" id="zax-iM-aNg"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roast Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpG-HJ-UDT">
+                                <rect key="frame" x="31" y="362" width="313" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="U3f-Dm-OaE" firstAttribute="leading" secondItem="fOC-Bl-5XS" secondAttribute="leadingMargin" constant="5" id="MSg-YK-oJ1"/>
                             <constraint firstItem="rpG-HJ-UDT" firstAttribute="leading" secondItem="fOC-Bl-5XS" secondAttribute="leadingMargin" constant="15" id="YBO-1Z-K2a"/>
-                            <constraint firstItem="rpG-HJ-UDT" firstAttribute="top" secondItem="U3f-Dm-OaE" secondAttribute="bottom" constant="5" id="fcU-f5-pMB"/>
+                            <constraint firstItem="rpG-HJ-UDT" firstAttribute="top" secondItem="U3f-Dm-OaE" secondAttribute="bottom" constant="7" id="fcU-f5-pMB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="U3f-Dm-OaE" secondAttribute="trailing" constant="5" id="r5u-AE-o2z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rpG-HJ-UDT" secondAttribute="trailing" constant="15" id="rcA-0M-Sth"/>
                             <constraint firstItem="U3f-Dm-OaE" firstAttribute="top" secondItem="pGO-1Z-yBL" secondAttribute="bottom" constant="2" id="wF1-wn-Izq"/>
@@ -131,6 +131,9 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="roastCaption" destination="rpG-HJ-UDT" id="jLf-wb-2au"/>
+                        <outlet property="roastComments" destination="gtx-qr-hz0" id="X4m-nP-1mL"/>
+                        <outlet property="roastImage" destination="U3f-Dm-OaE" id="UvO-Cw-za9"/>
                         <outlet property="view" destination="fOC-Bl-5XS" id="8Pl-QR-GEq"/>
                     </connections>
                 </viewController>
@@ -385,6 +388,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YsG-co-IhA"/>
+        <segue reference="t6A-4A-icc"/>
     </inferredMetricsTieBreakers>
 </document>

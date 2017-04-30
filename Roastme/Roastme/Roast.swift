@@ -7,14 +7,13 @@
 //
 
 import Foundation
-import UIKit
 
-class Roast{
-    var roastee: String?
-    var picture: String?
-    var caption: String?
-    var creationDate: Date?
+
+struct Roast{
+    let roastee: Int?
+    let picture: String?
+    let caption: String?
+    let creationDate: String?
     
-   // private class func roastFromResponse(_ response: DataResponse<Any>) -> result
     
 }

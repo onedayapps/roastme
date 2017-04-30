@@ -6,7 +6,7 @@
 //  Copyright © 2017 OneDayApps. All rights reserved.
 //
 
-import Foundation
+
 
 import Foundation
 import Alamofire
@@ -112,12 +112,20 @@ class RoastAPI {
     
     
     
-    static func getRoast(rid: String) {
+    static func getRoast(rid: String, callback: @escaping (Roast?)-> Void)  {
        let url = apiRoot + "roastserv/roasts/" + rid
+        
         Alamofire.request(url).responseJSON{ response in
-            print(response.result)
-            if let JSON = response.result.value{
-                print("JSON: \(JSON)")
+            switch response.result {
+            case .success:
+                if let value = response.result.value{
+                    let json = JSON(value)
+                    let roast = Roast(roastee: json["roastee"].int, picture: json["picture"].string!, caption: json["caption"].string!, creationDate: json["creationDate"].string!)
+                   
+                    callback(roast)
+                }
+            case .failure:
+                print(LoginErrorResponse(generalErr: generalError))
             }
         }
     }
@@ -127,7 +135,7 @@ class RoastAPI {
         Alamofire.request(url).responseJSON{ response in
             print(response.result)
             if let JSON = response.result.value{
-                print("JSON: \(JSON)")
+               print("JSON: \(JSON)")
             }
         }
     }

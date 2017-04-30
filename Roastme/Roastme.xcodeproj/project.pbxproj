@@ -14,7 +14,6 @@
 		4774E1DF1E878EB8000D0182 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4774E1DD1E878EB8000D0182 /* LaunchScreen.storyboard */; };
 		4774E1EA1E878EB9000D0182 /* RoastmeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4774E1E91E878EB9000D0182 /* RoastmeTests.swift */; };
 		4774E1F51E878EB9000D0182 /* RoastmeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4774E1F41E878EB9000D0182 /* RoastmeUITests.swift */; };
-		4C75C4F61EA1AE54005AF365 /* QuickRoastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C75C4F51EA1AE54005AF365 /* QuickRoastsViewController.swift */; };
 		4C75C4F81EA1D555005AF365 /* Roast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C75C4F71EA1D555005AF365 /* Roast.swift */; };
 		4C75C4FA1EA1D562005AF365 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C75C4F91EA1D562005AF365 /* Comment.swift */; };
 		5DB5ADA7579DE6F31F22E5F4 /* Pods_RoastmeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C33A38F0A2A7FEAF7D2A74 /* Pods_RoastmeUITests.framework */; };
@@ -26,6 +25,7 @@
 		AC44D7571E93363E003643AF /* CreateRoastController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC44D7561E93363E003643AF /* CreateRoastController.swift */; };
 		BA3EA8971E90C27A00C4F586 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3EA8961E90C27A00C4F586 /* LoginViewController.swift */; };
 		BA5BAB151EB54F1700D1A9B9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5BAB141EB54F1700D1A9B9 /* User.swift */; };
+		BA5BAB171EB642A600D1A9B9 /* QuickRoastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5BAB161EB642A600D1A9B9 /* QuickRoastsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +60,6 @@
 		4774E1F01E878EB9000D0182 /* RoastmeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoastmeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4774E1F41E878EB9000D0182 /* RoastmeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoastmeUITests.swift; sourceTree = "<group>"; };
 		4774E1F61E878EB9000D0182 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C75C4F51EA1AE54005AF365 /* QuickRoastsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickRoastsViewController.swift; sourceTree = "<group>"; };
 		4C75C4F71EA1D555005AF365 /* Roast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Roast.swift; sourceTree = "<group>"; };
 		4C75C4F91EA1D562005AF365 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		50B53A9774C8927B07C8F161 /* Pods-Roastme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roastme.release.xcconfig"; path = "Pods/Target Support Files/Pods-Roastme/Pods-Roastme.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +73,7 @@
 		AE89E81940B0F25CB348E787 /* Pods-Roastme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roastme.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Roastme/Pods-Roastme.debug.xcconfig"; sourceTree = "<group>"; };
 		BA3EA8961E90C27A00C4F586 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BA5BAB141EB54F1700D1A9B9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BA5BAB161EB642A600D1A9B9 /* QuickRoastsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickRoastsViewController.swift; sourceTree = "<group>"; };
 		BACF865ADF0B787D3CBB17DA /* Pods-RoastmeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoastmeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoastmeTests/Pods-RoastmeTests.release.xcconfig"; sourceTree = "<group>"; };
 		C7C33A38F0A2A7FEAF7D2A74 /* Pods_RoastmeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoastmeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F03010D5BFE9BCCFCBB4C2C8 /* Pods-RoastmeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoastmeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoastmeUITests/Pods-RoastmeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,9 +145,9 @@
 				BA3EA8961E90C27A00C4F586 /* LoginViewController.swift */,
 				82B612D91E87A4320001CC6E /* LoginErrorResponse.swift */,
 				82B612D71E87A35E0001CC6E /* TokenResponse.swift */,
+				BA5BAB161EB642A600D1A9B9 /* QuickRoastsViewController.swift */,
 				4774E1D41E878EB8000D0182 /* AppDelegate.swift */,
 				4774E1D61E878EB8000D0182 /* ViewController.swift */,
-				4C75C4F51EA1AE54005AF365 /* QuickRoastsViewController.swift */,
 				4774E1D81E878EB8000D0182 /* Main.storyboard */,
 				4774E1DB1E878EB8000D0182 /* Assets.xcassets */,
 				4774E1DD1E878EB8000D0182 /* LaunchScreen.storyboard */,
@@ -477,9 +477,9 @@
 				82B612D61E879A400001CC6E /* RoastAPI.swift in Sources */,
 				4C75C4FA1EA1D562005AF365 /* Comment.swift in Sources */,
 				4774E1D71E878EB8000D0182 /* ViewController.swift in Sources */,
-				4C75C4F61EA1AE54005AF365 /* QuickRoastsViewController.swift in Sources */,
 				82B612DA1E87A4320001CC6E /* LoginErrorResponse.swift in Sources */,
 				BA3EA8971E90C27A00C4F586 /* LoginViewController.swift in Sources */,
+				BA5BAB171EB642A600D1A9B9 /* QuickRoastsViewController.swift in Sources */,
 				82B612D81E87A35E0001CC6E /* TokenResponse.swift in Sources */,
 				4C75C4F81EA1D555005AF365 /* Roast.swift in Sources */,
 				4774E1D51E878EB8000D0182 /* AppDelegate.swift in Sources */,
