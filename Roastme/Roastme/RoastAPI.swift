@@ -11,7 +11,6 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-import NetworkManager
 
 
 /*
@@ -72,7 +71,7 @@ class RoastAPI {
     /*
      * Create a new roast
     */
-    /*static func createRoast(authToken:String, roastImage:UIImage, caption:String) {
+    static func createRoast(authToken:String, roastImage:UIImage, caption:String, callback: @escaping (createRoastResponse?, LoginErrorResponse?) -> Void) {
         let url = apiRoot + "roastserv/createroast/"
         let headers = [
             "Authorization": "Token " + authToken
@@ -92,23 +91,27 @@ class RoastAPI {
                         upload.responseJSON { response in
                             switch response.response?.statusCode {
                             case .none:
-                                callback(nil, serversDown)
+                                callback(nil, LoginErrorResponse(generalErr: serversDown))
                             case .some(200):
                                 if let json = response.result.value as? [String:String] {
-                                    print(json)
+                                    let creationResponse = createRoastResponse(response: json)
+                                    callback(creationResponse, nil)
+                                  
                                 }
-                            default: break
+                            default:
                                 // server error
-                                //callback(nil, generalError)
+                               
+                                callback(nil, LoginErrorResponse(generalErr: generalError))
                             }
                         }
-                    case .failure: break
+                    case .failure:
                         // error uploading file to servers
-                        //callback(nil, generalError)
+                       
+                        callback(nil, LoginErrorResponse(generalErr: generalError))
                     }
             }
         )
-    }*/
+    }
     
     
     
@@ -120,7 +123,10 @@ class RoastAPI {
             case .success:
                 if let value = response.result.value{
                     let json = JSON(value)
-                    let roast = Roast(roastee: json["roastee"].int, picture: json["picture"].string!, caption: json["caption"].string!, creationDate: json["creationDate"].string!)
+                    let roast = Roast(roastee: json["roastee"].int,
+                                      picture: json["picture"].string!,
+                                      caption: json["caption"].string!,
+                                      creationDate: json["creationDate"].string!)
                    
                     callback(roast)
                 }
