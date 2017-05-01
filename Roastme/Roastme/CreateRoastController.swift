@@ -18,9 +18,9 @@ class CreateRoastController: UIViewController, UIImagePickerControllerDelegate, 
 
     @IBAction func createRoastButton(_ sender: Any) {
         if roastCaption.text == ""{
-            //Error: Please add a caption.
+            print(")Error: Please add a caption.")
         } else if previewImage.image == nil{
-            //Error: Please add a picture.
+            print("Error: Please add a picture.")
         } else{
             RoastAPI.createRoast(authToken: currentToken!, roastImage: previewImage.image!, caption: roastCaption.text!, callback: {
                 (success:createRoastResponse?, error:LoginErrorResponse?) in
