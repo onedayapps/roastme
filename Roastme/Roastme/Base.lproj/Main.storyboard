@@ -327,6 +327,7 @@
                                     <color key="titleShadowColor" red="0.99824309349060059" green="0.14298866636216878" blue="0.13742318284954383" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="createRoastButton:" destination="cMh-K1-Duv" eventType="touchUpInside" id="2kW-AG-SjI"/>
                                     <action selector="newRoast:" destination="cMh-K1-Duv" eventType="touchUpInside" id="fak-hD-OMy"/>
                                 </connections>
                             </button>
@@ -388,6 +389,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="t6A-4A-icc"/>
+        <segue reference="YsG-co-IhA"/>
     </inferredMetricsTieBreakers>
 </document>

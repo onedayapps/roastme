@@ -16,6 +16,24 @@ class CreateRoastController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet var roastCaption: UITextView!
     let currentToken:String? = User.sharedInstance.authToken
 
+    @IBAction func createRoastButton(_ sender: Any) {
+        if roastCaption.text == ""{
+            //Error: Please add a caption.
+        } else if previewImage.image == nil{
+            //Error: Please add a picture.
+        } else{
+            RoastAPI.createRoast(authToken: currentToken!, roastImage: previewImage.image!, caption: roastCaption.text!, callback: {
+                (success:createRoastResponse?, error:LoginErrorResponse?) in
+                if success != nil {
+                    print(success?.response)
+                } else {
+                    print(error?.credentialsErr)
+                }
+            })
+        }
+
+    }
+    
     @IBAction func uploadRoastPicture(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
             let imagePicker = UIImagePickerController()
@@ -41,8 +59,7 @@ class CreateRoastController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-            print("I am the create roast token: ")
-            print(currentToken!)
+        
     }
     
     
@@ -55,12 +72,5 @@ class CreateRoastController: UIViewController, UIImagePickerControllerDelegate, 
     
    /*
     @IBAction func newRoast(_ sender: UIButton) {
-        if roastCaption.text == ""{
-            //Error: Please add a caption.
-        } else if previewImage.image == nil{
-            //Error: Please add a picture.
-        } else{
-        RoastAPI.createRoast(authToken: currentToken!, roastImage: previewImage.image!, caption: roastCaption.text!)
-        }
-    }*/
+            }*/
 }
