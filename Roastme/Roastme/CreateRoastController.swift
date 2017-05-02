@@ -25,14 +25,17 @@ class CreateRoastController: UIViewController, UIImagePickerControllerDelegate, 
             RoastAPI.createRoast(authToken: currentToken!, roastImage: previewImage.image!, caption: roastCaption.text!, callback: {
                 (success:createRoastResponse?, error:LoginErrorResponse?) in
                 if success != nil {
-                    print(success?.response)
+                    print("submitted")
                 } else {
-                    print(error?.credentialsErr)
+                    print("back to the drawing board")
                 }
             })
         }
 
     }
+    
+    //set keyboard type for textview
+    
     
     @IBAction func uploadRoastPicture(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
@@ -59,7 +62,15 @@ class CreateRoastController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CreateRoastController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
         
+        
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     

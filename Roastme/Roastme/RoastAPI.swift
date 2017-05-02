@@ -76,7 +76,7 @@ class RoastAPI {
         let headers = [
             "Authorization": "Token " + authToken
         ]
-        
+
         NetworkManager.sharedInstance.defaultManager.upload(
             multipartFormData: { multipartFormData in
                 multipartFormData.append(UIImageJPEGRepresentation(roastImage, 0.75)!, withName: "roastimage", fileName: "new_roast.jpeg", mimeType: "image/jpeg")
