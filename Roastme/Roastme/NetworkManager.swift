@@ -14,11 +14,13 @@ class NetworkManager {
     
     let defaultManager: Alamofire.SessionManager = {
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
+            //need to update
             "test.example.com": .pinCertificates(
                 certificates: ServerTrustPolicy.certificates(),
                 validateCertificateChain: true,
                 validateHost: true
             ),
+            //need to update
             "insecure.expired-apis.com": .disableEvaluation
         ]
         

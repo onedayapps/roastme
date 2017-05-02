@@ -25,9 +25,10 @@ class CreateRoastController: UIViewController, UIImagePickerControllerDelegate, 
             RoastAPI.createRoast(authToken: currentToken!, roastImage: previewImage.image!, caption: roastCaption.text!, callback: {
                 (success:createRoastResponse?, error:LoginErrorResponse?) in
                 if success != nil {
-                    print("submitted")
+                    print(success?.response!)
                 } else {
                     print("back to the drawing board")
+                    print(error!)
                 }
             })
         }

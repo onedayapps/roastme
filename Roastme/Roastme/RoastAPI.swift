@@ -76,10 +76,16 @@ class RoastAPI {
         let headers = [
             "Authorization": "Token " + authToken
         ]
+        let parameters = [
+            "caption": caption
+        ]
 
         NetworkManager.sharedInstance.defaultManager.upload(
             multipartFormData: { multipartFormData in
                 multipartFormData.append(UIImageJPEGRepresentation(roastImage, 0.75)!, withName: "roastimage", fileName: "new_roast.jpeg", mimeType: "image/jpeg")
+                for (key, value) in parameters {
+                    multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+                }
             },
                 usingThreshold: SessionManager.multipartFormDataEncodingMemoryThreshold,
                 to: url,
@@ -89,6 +95,7 @@ class RoastAPI {
                     switch encodingResult {
                     case .success(let upload, _, _):
                         upload.responseJSON { response in
+                            
                             switch response.response?.statusCode {
                             case .none:
                                 callback(nil, LoginErrorResponse(generalErr: serversDown))
