@@ -143,14 +143,28 @@ class RoastAPI {
         }
     }
     
-    static func getRoastComments(rid: String) {
+    static func getRoastComments(rid: String, callback: @escaping ([Comment]?)-> Void)  {
         let url = apiRoot + "roastserv/comments/" + rid
+        
         Alamofire.request(url).responseJSON{ response in
-            print(response.result)
-            if let JSON = response.result.value{
-               print("JSON: \(JSON)")
+            switch response.result {
+            case .success:
+                if let value = response.result.value{
+                    let json = JSON(value)
+                    var roastComments : [Comment] = []
+                    
+                    for item in json.arrayValue {
+                        let content = Comment(json: item)
+                        roastComments.append(content)
+                    }
+                    
+                    callback(roastComments)
+                }
+            case .failure:
+                print(LoginErrorResponse(generalErr: generalError))
             }
         }
     }
-
+    
+    
 }
