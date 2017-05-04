@@ -17,3 +17,11 @@ struct createRoastResponse {
         
     }
 }
+
+struct createCommentResponse {
+    let response:Int?
+    
+    init(response: Int? = nil) {
+        self.response = response
+    }
+}

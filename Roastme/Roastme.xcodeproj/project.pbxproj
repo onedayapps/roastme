@@ -28,6 +28,7 @@
 		BA5BAB171EB642A600D1A9B9 /* QuickRoastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5BAB161EB642A600D1A9B9 /* QuickRoastsViewController.swift */; };
 		BA5BAB191EB6894E00D1A9B9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5BAB181EB6894E00D1A9B9 /* NetworkManager.swift */; };
 		BA5BAB1B1EB68D5000D1A9B9 /* createRoastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5BAB1A1EB68D5000D1A9B9 /* createRoastResponse.swift */; };
+		BAE40BD71EBAF8C90085E2E3 /* CreateCommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE40BD61EBAF8C90085E2E3 /* CreateCommentController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		BA5BAB181EB6894E00D1A9B9 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BA5BAB1A1EB68D5000D1A9B9 /* createRoastResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createRoastResponse.swift; sourceTree = "<group>"; };
 		BACF865ADF0B787D3CBB17DA /* Pods-RoastmeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoastmeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoastmeTests/Pods-RoastmeTests.release.xcconfig"; sourceTree = "<group>"; };
+		BAE40BD61EBAF8C90085E2E3 /* CreateCommentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCommentController.swift; sourceTree = "<group>"; };
 		C7C33A38F0A2A7FEAF7D2A74 /* Pods_RoastmeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoastmeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F03010D5BFE9BCCFCBB4C2C8 /* Pods-RoastmeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoastmeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoastmeUITests/Pods-RoastmeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +165,7 @@
 				BA5BAB141EB54F1700D1A9B9 /* User.swift */,
 				BA5BAB181EB6894E00D1A9B9 /* NetworkManager.swift */,
 				BA5BAB1A1EB68D5000D1A9B9 /* createRoastResponse.swift */,
+				BAE40BD61EBAF8C90085E2E3 /* CreateCommentController.swift */,
 			);
 			path = Roastme;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 					4774E1D01E878EB8000D0182 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = SBQWGW3CN9;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					4774E1E41E878EB9000D0182 = {
@@ -489,6 +493,7 @@
 				BA3EA8971E90C27A00C4F586 /* LoginViewController.swift in Sources */,
 				BA5BAB171EB642A600D1A9B9 /* QuickRoastsViewController.swift in Sources */,
 				82B612D81E87A35E0001CC6E /* TokenResponse.swift in Sources */,
+				BAE40BD71EBAF8C90085E2E3 /* CreateCommentController.swift in Sources */,
 				4C75C4F81EA1D555005AF365 /* Roast.swift in Sources */,
 				4774E1D51E878EB8000D0182 /* AppDelegate.swift in Sources */,
 				AC44D7571E93363E003643AF /* CreateRoastController.swift in Sources */,
@@ -645,6 +650,7 @@
 			baseConfigurationReference = AE89E81940B0F25CB348E787 /* Pods-Roastme.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = SBQWGW3CN9;
 				INFOPLIST_FILE = Roastme/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -652,6 +658,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ODA.Roastme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -661,6 +668,7 @@
 			baseConfigurationReference = 50B53A9774C8927B07C8F161 /* Pods-Roastme.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = SBQWGW3CN9;
 				INFOPLIST_FILE = Roastme/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;

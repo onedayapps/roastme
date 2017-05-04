@@ -30,7 +30,7 @@ class LoginViewController:UIViewController{
                 
                 }*/
             } else {
-                print(loginErr?.credentialsErr)
+              //  print(loginErr?.credentialsErr)
             }
         })
     }

@@ -17,12 +17,13 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
     
     var numCommentRows : Int?
     var userComments : [Comment] = []
+    let roastID = "2"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
          // get roast info
-        let roastID = "2"
+        
         RoastAPI.getRoast(rid: roastID, callback: {
             (roast:Roast?) in
             if roast != nil {
@@ -59,6 +60,8 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
         }) //need to add callback etc
        
         
+        
+        
         //setup UITableView delegates
         self.roastComments.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         roastComments.delegate = self
@@ -66,6 +69,18 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
         
     }
     
+    @IBAction func createComment(_ sender: Any) {
+        performSegue(withIdentifier: "createCommentModal", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "createCommentModal" {
+            let vc = segue.destination as! CreateCommentController
+            vc.roastID = roastID
+            
+            
+        }
+    }
     
     
     override func didReceiveMemoryWarning() {
@@ -88,6 +103,7 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         print("loading tableview")
+        
         cell.textLabel?.text = self.userComments[indexPath.row].content
         
         return cell

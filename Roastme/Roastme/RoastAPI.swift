@@ -167,4 +167,56 @@ class RoastAPI {
     }
     
     
+    //create comment
+    static func createComment(authToken:String, content:String, roastID:String, callback: @escaping (createCommentResponse?, LoginErrorResponse?) -> Void) {
+        let url = apiRoot + "roastserv/createroastcomment/"
+        let headers = [
+            "Authorization": "Token " + authToken
+        ]
+        let parameters = [
+            "content": content,
+            "roast": roastID
+        ]
+        
+        NetworkManager.sharedInstance.defaultManager.upload(
+            multipartFormData: { multipartFormData in
+                
+                for (key, value) in parameters {
+                    multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+                }
+        },
+            usingThreshold: SessionManager.multipartFormDataEncodingMemoryThreshold,
+            to: url,
+            method: .post,
+            headers: headers,
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    upload.responseJSON { response in
+                        
+                        switch response.response?.statusCode {
+                        case .none:
+                            callback(nil, LoginErrorResponse(generalErr: serversDown))
+                        case .some(201):
+                            if let json = response.response?.statusCode {
+                                let creationResponse = createCommentResponse(response: json)
+                                callback(creationResponse, nil)
+                                
+                            }
+                        default:
+                            // server error
+                            
+                            callback(nil, LoginErrorResponse(generalErr: generalError))
+                        }
+                    }
+                case .failure:
+                    // error uploading file to servers
+                    
+                    callback(nil, LoginErrorResponse(generalErr: generalError))
+                }
+        }
+        )
+    }
+    
+    
 }
