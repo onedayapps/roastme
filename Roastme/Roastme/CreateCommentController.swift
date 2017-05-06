@@ -14,7 +14,7 @@ class CreateCommentController: UIViewController {
     
     @IBOutlet weak var commentTextView: UITextView!
     let currentToken = User.sharedInstance.authToken
-    var roastID:String? = nil
+    var roastID:Int? = nil
    
     
     @IBAction func submit(_ sender: Any) {

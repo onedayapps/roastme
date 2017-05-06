@@ -22,7 +22,7 @@ import SwiftyJSON
  */
 class RoastAPI {
     //static let apiRoot = "https://roastme.com/"
-    static let apiRoot = "http://192.168.1.81:8000/"
+    static let apiRoot = "http://192.168.1.83:8000/"
     
     static let serversDown = "Roastme's servers are down. Try again later!"
     static let generalError = "Oh snap! Something went wrong. Try again later!"
@@ -122,8 +122,8 @@ class RoastAPI {
     
     
     
-    static func getRoast(rid: String, callback: @escaping (Roast?)-> Void)  {
-       let url = apiRoot + "roastserv/roasts/" + rid
+    static func getRoast(rid: Int, callback: @escaping (Roast?)-> Void)  {
+       let url = apiRoot + "roastserv/roasts/" + String(rid)
         
         Alamofire.request(url).responseJSON{ response in
             switch response.result {
@@ -143,8 +143,8 @@ class RoastAPI {
         }
     }
     
-    static func getRoastComments(rid: String, callback: @escaping ([Comment]?)-> Void)  {
-        let url = apiRoot + "roastserv/comments/" + rid
+    static func getRoastComments(rid: Int, callback: @escaping ([Comment]?)-> Void)  {
+        let url = apiRoot + "roastserv/comments/" + String(rid)
         
         Alamofire.request(url).responseJSON{ response in
             switch response.result {
@@ -168,19 +168,20 @@ class RoastAPI {
     
     
     //create comment
-    static func createComment(authToken:String, content:String, roastID:String, callback: @escaping (createCommentResponse?, LoginErrorResponse?) -> Void) {
+    static func createComment(authToken:String, content:String, roastID:Int, callback: @escaping (createCommentResponse?, LoginErrorResponse?) -> Void) {
         let url = apiRoot + "roastserv/createroastcomment/"
         let headers = [
             "Authorization": "Token " + authToken
         ]
+        
         let parameters = [
             "content": content,
-            "roast": roastID
-        ]
+            "roast": String(roastID)
+            ]
         
         NetworkManager.sharedInstance.defaultManager.upload(
             multipartFormData: { multipartFormData in
-                
+        
                 for (key, value) in parameters {
                     multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
                 }

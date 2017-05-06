@@ -15,7 +15,7 @@ class Comment{
     var sauce: Int?
     var salt: Int?
     var roaster: String?
-    var roast: String?
+    var roast: Int?
     var commentDate: String?
     
     required init(json: JSON) {
@@ -24,7 +24,7 @@ class Comment{
         self.sauce = json[CommentFields.sauce.rawValue].int
         self.salt = json[CommentFields.salt.rawValue].int
         self.roaster = json[CommentFields.roaster.rawValue].string
-        self.roast = json[CommentFields.roast.rawValue].string
+        self.roast = json[CommentFields.roast.rawValue].int
         self.commentDate = json[CommentFields.commentDate.rawValue].string
         }
 }

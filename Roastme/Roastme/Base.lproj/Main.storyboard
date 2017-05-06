@@ -86,6 +86,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U3f-Dm-OaE">
                                 <rect key="frame" x="21" y="22" width="333" height="333"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="U3f-Dm-OaE" secondAttribute="height" multiplier="1:1" id="PBw-Ak-KxS"/>
                                 </constraints>
@@ -161,9 +162,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="rpG-HJ-UDT" secondAttribute="trailing" constant="15" id="rcA-0M-Sth"/>
                             <constraint firstItem="U3f-Dm-OaE" firstAttribute="top" secondItem="pGO-1Z-yBL" secondAttribute="bottom" constant="2" id="wF1-wn-Izq"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="3vS-pY-Tax" appends="YES" id="TUA-dy-6P8"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="roastCaption" destination="rpG-HJ-UDT" id="jLf-wb-2au"/>
@@ -174,7 +172,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFo-Ni-6wJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="3vS-pY-Tax"/>
             </objects>
             <point key="canvasLocation" x="1453.5999999999999" y="-11.244377811094454"/>
         </scene>
