@@ -166,7 +166,22 @@ class RoastAPI {
         }
     }
     
+  
+  static func getRoastCount(callback: @escaping (Int?) -> Void) {
+    let url = apiRoot + "roastserv/roastcount/"
     
+    Alamofire.request(url).responseString{ response in
+      switch response.result {
+      case .success:
+        if let data = response.result.value {
+          callback(Int(data)!)
+        }
+      case .failure:
+        print("failed")
+      }
+    }
+  }
+  
     //create comment
     static func createComment(authToken:String, content:String, roastID:Int, callback: @escaping (createCommentResponse?, LoginErrorResponse?) -> Void) {
         let url = apiRoot + "roastserv/createroastcomment/"

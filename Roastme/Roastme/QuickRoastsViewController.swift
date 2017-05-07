@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+// need to add caching for roasts to eliminate latency ie, store roast data in an array of 3 roasts [prev, current, next]
+
 class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var roastImage: UIImageView!
@@ -17,14 +19,13 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
     
     var numCommentRows : Int?
     var userComments : [Comment] = []
-    var roastID:Int = 2 //make random, code on line below may work once Anto pushes roastCount from the server
+    var roastID:Int = 6 //make random, code on line below may work once Anto pushes roastCount from the server
     // var roastID:Int = arc4random_uniform(roastCount) //make random later
-    var roastCount:Int = 5 //modify to get count of roasts from DB
-    let firstRoast:Int = 2 //get from DB
+    let firstRoast:Int = 6 //get from DB
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+      
         loadRoast()
         loadComments()
         
@@ -58,8 +59,7 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
     
     func swipeLeftActions(gesture: UISwipeGestureRecognizer) {
         nextRoast()
-        loadRoast()
-        loadComments()
+
         print("left")
     }
     
@@ -69,7 +69,8 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
         loadComments()
         print("right")
     }
-    
+  
+  
     func loadRoast() {
         // get roast info
         
@@ -93,12 +94,30 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
             }
         })
     }
-    
-    func nextRoast() {
-        var tempRoastID = roastID
-        tempRoastID += 1
-        roastID = min(tempRoastID, roastCount)
-        //neet to add validation for number of roasts
+  
+  func nextRoast() {
+      
+      RoastAPI.getRoastCount(callback: {
+        (roastCount:Int?) in
+        if roastCount != nil {
+          let minRoastID = self.firstRoast
+          var roastIndexMax = 0
+          var tempRoastID = self.roastID
+          
+          roastIndexMax = minRoastID + roastCount! - 1
+          tempRoastID += 1
+          
+          self.roastID = min(tempRoastID, roastIndexMax)
+          print("roastID \(self.roastID)")
+          self.loadRoast()
+          self.loadComments()
+          
+          
+        } else {
+        }
+      })
+      
+
         
     }
     
@@ -128,13 +147,13 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
         guard let rows = numCommentRows else {
             return 0
         }
-        print(rows)
+      //print("rows \(rows)")
         return rows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        print("loading tableview")
+      //print("loading tableview")
         
         cell.textLabel?.text = self.userComments[indexPath.row].content
         
