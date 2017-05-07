@@ -32,3 +32,4 @@ class NewRoastCommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = RoastComment
         fields = ('content', 'roaster', 'roast')
+

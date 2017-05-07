@@ -27,6 +27,7 @@ class Roast(models.Model):
     def __str__(self):
         return str(self.id)
 
+
 class RoastComment(models.Model):
     content = models.CharField(max_length=256)
     upvotes = models.IntegerField(default=0)
@@ -35,4 +36,5 @@ class RoastComment(models.Model):
     roaster = models.ForeignKey(User)
     roast = models.ForeignKey(Roast)
     commentDate = models.DateTimeField(auto_now_add=True)
+
 

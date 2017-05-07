@@ -16,7 +16,8 @@ urlpatterns = [
     url(r'^createroastcomment/', views.NewRoastComment.as_view(), name='createcomment'),
     url(r'^createroast/', views.CreateRoastView.as_view(), name='createroast'),
     url(r'^roasts/(?P<rid>[0-9]+)/$', views.singleRoast.as_view()),
-    url(r'^comments/(?P<rid>[0-9]+)/$', views.RoastCommentList.as_view())
+    url(r'^comments/(?P<rid>[0-9]+)/$', views.RoastCommentList.as_view()),
+    url(r'^roastcount/', views.roastCount, name='roastCount')
 
 ]
 

@@ -20,7 +20,6 @@ from .models import Roast, RoastComment
 def index(request):
     return HttpResponse("Roastme")
 
-
 class CreateRoastView(APIView):
     """
     curl -X PUT -H "Authorization: Token <token>" -F "roastimage_file=@/path/to/image.jpg" -f "caption=blah" url:port
@@ -64,8 +63,9 @@ class GroupViewSet(viewsets.ModelViewSet):
     serializer_class = GroupSerializer
 
 class RoastViewSet(viewsets.ModelViewSet):
-    queryset = Roast.objects.all()
-    serializer_class = RoastSerializer
+   queryset = Roast.objects.all()
+   serializer_class = RoastSerializer
+
 
 class singleRoast(generics.CreateAPIView):
     serializer_class = RoastSerializer
@@ -79,6 +79,8 @@ class RoastCommentList(generics.ListCreateAPIView):
         roastid = self.kwargs['rid']
         return RoastComment.objects.all().filter(roast_id=roastid)
 
+def roastCount(request):
+    return HttpResponse(Roast.objects.count())
 
 # Dont Need this right now
 #class RoastCommentDetail(generics.RetrieveUpdateDestroyAPIView):
