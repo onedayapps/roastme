@@ -17,7 +17,8 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
     
     var numCommentRows : Int?
     var userComments : [Comment] = []
-    var roastID:Int = 2 //make random later
+    var roastID:Int = 2 //make random, code on line below may work once Anto pushes roastCount from the server
+    // var roastID:Int = arc4random_uniform(roastCount) //make random later
     var roastCount:Int = 5 //modify to get count of roasts from DB
     let firstRoast:Int = 2 //get from DB
     
