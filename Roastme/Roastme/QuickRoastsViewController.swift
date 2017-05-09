@@ -12,18 +12,21 @@ import UIKit
 // need to add caching for roasts to eliminate latency ie, store roast data in an array of 3 roasts [prev, current, next]
 // need handling for the case where a roast ID does not exist in the DB
 
+//need function to get a list of roast ids based on criteria like date range(today, this week, this month, upvotes, upvotes+date range, or in sequential order) then store the roast ids in an array and walk through them when going to next roast etc
+
 class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var roastImage: UIImageView!
     @IBOutlet weak var roastCaption: UILabel!
     @IBOutlet weak var roastComments: UITableView!
     
-    var loadTableFlag : Int = 0
-    var numCommentRows : Int?
-    var userComments : [Comment] = []
+    var loadTableFlag: Int = 0
+    var numCommentRows: Int?
+    var userComments: [Comment] = []
     var roastID:Int = 1 //make random, code on line below may work once Anto pushes roastCount from the server
     // var roastID:Int = arc4random_uniform(roastCount) //make random later
     let firstRoast:Int = 1 //get from DB
+    let noRoastsErr = "No Roasts Found"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +37,10 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
                 self.loadRoast()
                 self.loadComments()
                 self.loadTableFlag = 1
-            }
+            } else {
+              self.roastCaption.text = noRoastsErr
+          }
+          
             // Do something about nil
         })
         
