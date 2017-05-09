@@ -30,7 +30,7 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
         loadComments()
         
         //setup UITableView delegates
-        self.roastComments.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+      self.roastComments.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         roastComments.delegate = self
         roastComments.dataSource = self
         
@@ -87,6 +87,7 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
                     //display roast info
                     self.roastCaption.text = roast?.caption!
                     self.roastImage.image = UIImage(data: data!)
+                  
                 }
                 
             } else {
@@ -152,10 +153,16 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-      //print("loading tableview")
-        
-        cell.textLabel?.text = self.userComments[indexPath.row].content
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! commentCell
+        print("loading tableview")
+      
+        let commentText = self.userComments[indexPath.row].content
+        let saltValue = String(describing: self.userComments[indexPath.row].salt)
+        let sauceValue = String(describing: self.userComments[indexPath.row].sauce)
+      
+        cell.comment.text = commentText
+        cell.salt.text = saltValue
+        cell.sauce.text = sauceValue
         
         return cell
     }
@@ -167,4 +174,10 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
     
 }
 
+class commentCell: UITableViewCell {
+  @IBOutlet weak var comment: UILabel!
+  @IBOutlet weak var sauce: UILabel!
 
+  @IBOutlet weak var salt: UILabel!
+  
+}
