@@ -9,9 +9,6 @@
 import Foundation
 import UIKit
 
-// need to add caching for roasts to eliminate latency ie, store roast data in an array of 3 roasts [prev, current, next]
-// need handling for the case where a roast ID does not exist in the DB
-
 //need function to get a list of roast ids based on criteria like date range(today, this week, this month, upvotes, upvotes+date range, or in sequential order) then store the roast ids in an array and walk through them when going to next roast etc
 
 class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -23,28 +20,28 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
     var loadTableFlag: Int = 0
     var numCommentRows: Int?
     var userComments: [Comment] = []
-    var roastID:Int = 1 //make random, code on line below may work once Anto pushes roastCount from the server
+    var roastIndex:Int = 0 //make random, code on line below may work once Anto pushes roastCount from the server
     // var roastID:Int = arc4random_uniform(roastCount) //make random later
-    let firstRoast:Int = 1 //get from DB
+    var rIDs: [Int] = []
+    var roastHistory: [Int] = []
     let noRoastsErr = "No Roasts Found"
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        RoastAPI.getRoastCount(callback: {
-            (count: Int?) in
-            if count != 0 {
+        
+        RoastAPI.getRIDlist(callback: {
+            (ids:[Int]?) in
+            if ids != nil {
+                self.rIDs = ids!
+                print(self.rIDs[self.roastIndex])
                 self.loadRoast()
                 self.loadComments()
-                self.loadTableFlag = 1
             } else {
-              self.roastCaption.text = noRoastsErr
-          }
-          
-            // Do something about nil
+                //error handling
+            }
         })
-        
-        
         
         //setup UITableView delegates
 
@@ -53,7 +50,7 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
         roastComments.dataSource = self
  
         //Guesture recognizers
-        if loadTableFlag == 1 {
+     
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeRightActions))
         swipeRight.direction = .right
         self.view.addGestureRecognizer(swipeRight)
@@ -61,7 +58,7 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeLeftActions))
         swipeLeft.direction = .left
         self.view.addGestureRecognizer(swipeLeft)
-        }
+        
     }
     
     @IBAction func createComment(_ sender: Any) {
@@ -71,7 +68,7 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "createCommentModal" {
             let vc = segue.destination as! CreateCommentController
-            vc.roastID = roastID
+            vc.roastID = rIDs[roastIndex]
         }
     }
     
@@ -79,7 +76,8 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
     
     func swipeLeftActions(gesture: UISwipeGestureRecognizer) {
         nextRoast()
-
+        loadRoast()
+        loadComments()
         print("left")
     }
     
@@ -89,12 +87,24 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
         loadComments()
         print("right")
     }
+    
+    func getRIDs() {
+        RoastAPI.getRIDlist(callback: {
+            (ids:[Int]?) in
+            if ids != nil {
+                self.rIDs = ids!
+                print(self.rIDs)
+            } else {
+                //error handling
+            }
+        })
+    }
   
   
     func loadRoast() {
         // get roast info
         
-        RoastAPI.getRoast(rid: roastID, callback: {
+        RoastAPI.getRoast(rid: rIDs[roastIndex], callback: {
             (roast:Roast?) in
             if roast != nil {
                 
@@ -117,39 +127,35 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
     }
   
   func nextRoast() {
-      
-      RoastAPI.getRoastCount(callback: {
-        (roastCount:Int?) in
-        if roastCount != nil {
-          let minRoastID = self.firstRoast
-          var roastIndexMax = 0
-          var tempRoastID = self.roastID
+    if roastHistory.count < rIDs.count {
+        // for if we do random roast selection
+        roastHistory.append(rIDs[roastIndex])
+    } else if roastIndex > rIDs.count - 2 {
+        // check for more roasts when user gets to end of their roast list
+        getRIDs()
+    }
+    
+        var tempRoastID = roastIndex
+        let roastIndexMax = rIDs.count - 1
+    
+        tempRoastID += 1
           
-          roastIndexMax = minRoastID + roastCount! - 1
-          tempRoastID += 1
-          
-          self.roastID = min(tempRoastID, roastIndexMax)
-          print("roastID \(self.roastID)")
-          self.loadRoast()
-          self.loadComments()
-          
-          
-        } else {
-        }
-      })
-      
+        roastIndex = min(tempRoastID, roastIndexMax)
+        print("roastID \(self.roastIndex)")
+    
 
-        
     }
     
     func prevRoast() {
-        var tempRoastID = roastID
+
+        var tempRoastID = roastIndex
         tempRoastID -= 1
-        roastID = max(tempRoastID, firstRoast)
+        roastIndex = max(tempRoastID, 0)
+        
     }
     
     func loadComments() {
-        RoastAPI.getRoastComments(rid: roastID, callback: {
+        RoastAPI.getRoastComments(rid: rIDs[roastIndex], callback: {
             (comments:[Comment]?) in
             if comments != nil {
                 //populate table view
@@ -161,7 +167,9 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
                 self.loadTableFlag = 0
             }
         })
+        
     }
+    
     
     //table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -120,7 +120,27 @@ class RoastAPI {
         )
     }
     
-    
+    static func getRIDlist(callback: @escaping ([Int]?) -> Void) {
+        let url = apiRoot + "roastserv/rids/"
+        
+        Alamofire.request(url).responseJSON{ response in
+            switch response.result {
+            case .success:
+                if let value = response.result.value{
+                    let json = JSON(value)
+                    var ids:[Int] = []
+                    for item in json.arrayValue{
+                        let id = item["id"].int
+                        ids.append(id!)
+                    }
+                    callback(ids)
+                }
+            case .failure:
+                print(LoginErrorResponse(generalErr: generalError))
+            }
+        
+        }
+    }
     
     static func getRoast(rid: Int, callback: @escaping (Roast?)-> Void)  {
        let url = apiRoot + "roastserv/roasts/" + String(rid)
