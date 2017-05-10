@@ -33,3 +33,9 @@ class NewRoastCommentSerializer(serializers.ModelSerializer):
         model = RoastComment
         fields = ('content', 'roaster', 'roast')
 
+class roastIDSerializer(serializers.ModelSerializer):
+    id = serializers.ReadOnlyField()
+
+    class Meta:
+        model = Roast
+        fields = ('id',)

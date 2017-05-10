@@ -10,7 +10,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status, generics
 
-from .serializers import UserSerializer, RoastSerializer, GroupSerializer, RoastCommentSerializer, NewRoastCommentSerializer
+from .serializers import UserSerializer, RoastSerializer, GroupSerializer, RoastCommentSerializer, NewRoastCommentSerializer, roastIDSerializer
 
 import time
 import os
@@ -81,6 +81,10 @@ class RoastCommentList(generics.ListCreateAPIView):
 
 def roastCount(request):
     return HttpResponse(Roast.objects.count())
+
+class roastCountViewSet(viewsets.ModelViewSet):
+    queryset = Roast.objects.all()
+    serializer_class = roastIDSerializer
 
 # Dont Need this right now
 #class RoastCommentDetail(generics.RetrieveUpdateDestroyAPIView):
