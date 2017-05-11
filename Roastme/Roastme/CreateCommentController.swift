@@ -9,13 +9,17 @@
 import Foundation
 import UIKit
 
+protocol createCommentDelegate {
+    func myVCDdidFinish(controller:CreateCommentController)
+}
+
 class CreateCommentController: UIViewController {
     
-    
+
     @IBOutlet weak var commentTextView: UITextView!
     let currentToken = User.sharedInstance.authToken
     var roastID:Int? = nil
-   
+    var delegate:createCommentDelegate! = nil
     
     @IBAction func submit(_ sender: Any) {
         let comment = commentTextView.text
@@ -25,7 +29,9 @@ class CreateCommentController: UIViewController {
             if success != nil {
                // print(success?.response!)
                 self.dismiss(animated: true, completion: nil)
-                
+                if self.delegate != nil {
+                    self.delegate!.myVCDdidFinish(controller: self)
+                }
                 
             } else {
                 print("back to the drawing board")
@@ -50,7 +56,7 @@ class CreateCommentController: UIViewController {
     view.endEditing(true)
     }
     
-    
+
 
 }
 

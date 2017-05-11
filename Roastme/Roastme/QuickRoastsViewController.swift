@@ -11,7 +11,7 @@ import UIKit
 
 //need function to get a list of roast ids based on criteria like date range(today, this week, this month, upvotes, upvotes+date range, or in sequential order) then store the roast ids in an array and walk through them when going to next roast etc
 
-class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, createCommentDelegate {
     
     @IBOutlet weak var roastImage: UIImageView!
     @IBOutlet weak var roastCaption: UILabel!
@@ -26,7 +26,7 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
     var roastHistory: [Int] = []
     let noRoastsErr = "No Roasts Found"
     
-    
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,7 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
         
         //setup UITableView delegates
 
-        self.roastComments.register(commentCell.self, forCellReuseIdentifier: "Cell")
+       // self.roastComments.register(commentCell.self, forCellReuseIdentifier: "Cell")
         roastComments.delegate = self
         roastComments.dataSource = self
  
@@ -59,16 +59,24 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
         swipeLeft.direction = .left
         self.view.addGestureRecognizer(swipeLeft)
         
+
+
+        
     }
     
+
     @IBAction func createComment(_ sender: Any) {
         performSegue(withIdentifier: "createCommentModal", sender: self)
+    }
+    func myVCDdidFinish(controller: CreateCommentController) {
+        loadComments()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "createCommentModal" {
             let vc = segue.destination as! CreateCommentController
             vc.roastID = rIDs[roastIndex]
+            vc.delegate = self
         }
     }
     
@@ -163,6 +171,7 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
                 self.numCommentRows = comments?.count
                 self.userComments = comments!
                 self.roastComments.reloadData()
+
             } else{
                 self.loadTableFlag = 0
             }
@@ -185,16 +194,18 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! commentCell
         print("loading tableview")
 
-        if loadTableFlag != 0 {
-        let commentText = self.userComments[indexPath.row].content
-        let saltValue = String(describing: self.userComments[indexPath.row].salt)
-        let sauceValue = String(describing: self.userComments[indexPath.row].sauce)
-        
-        cell.comment?.text = commentText
-        cell.salt?.text = saltValue
-        cell.sauce?.text = sauceValue
-            
+
+        if let commentText = self.userComments[indexPath.row].content {
+             cell.comment?.text = commentText
         }
+        if let saltValue = self.userComments[indexPath.row].salt {
+            cell.salt.text = "\(saltValue)"
+        }
+        if let sauceValue:Int = self.userComments[indexPath.row].sauce {
+            cell.sauce.text = "\(sauceValue)"
+        }
+            
+        
         return cell
     }
     
