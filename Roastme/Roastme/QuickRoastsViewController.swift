@@ -35,7 +35,7 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
             (ids:[Int]?) in
             if ids != nil {
                 self.rIDs = ids!
-                print(self.rIDs[self.roastIndex])
+              //print(self.rIDs[self.roastIndex])
                 self.loadRoast()
                 self.loadComments()
             } else {
@@ -117,17 +117,19 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
             if roast != nil {
                 
                 // download roast image
-                let url = URL(string: (roast?.picture)!)
-                let data = try? Data(contentsOf: url!)
-                
+              if let url = URL(string: (roast?.picture)!) {
+                if let data = try? Data(contentsOf: url) {
                 
                 DispatchQueue.main.async{
-                    //display roast info
-                    self.roastCaption.text = roast?.caption!
-                    self.roastImage.image = UIImage(data: data!)
-                  
+                    if let roastText = roast?.caption! {
+                      self.roastCaption.text = roastText
+                    }
+                    if let roastPic = UIImage(data: data) {
+                      self.roastImage.image = roastPic
+                    }
+                  }
                 }
-                
+              }
             } else {
                 // handle nil roast
             }
