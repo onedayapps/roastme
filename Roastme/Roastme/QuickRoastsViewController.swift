@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 
-//need function to get a list of roast ids based on criteria like date range(today, this week, this month, upvotes, upvotes+date range, or in sequential order) then store the roast ids in an array and walk through them when going to next roast etc
+// TODO: need function to get a list of roast ids based on criteria like date range(today, this week, this month, upvotes, upvotes+date range, or in sequential order) then store the roast ids in an array and walk through them when going to next roast etc
+
+// TODO: need to store perviously downloaded roasts ~ 5-10 to improve speed of app.  Also when downloading roasts download 3, and when swiping fill in the backend of the list.
 
 class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, createCommentDelegate {
     
@@ -42,8 +44,6 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
                 //error handling
             }
         })
-        
-        //setup UITableView delegates
 
        // self.roastComments.register(commentCell.self, forCellReuseIdentifier: "Cell")
         roastComments.delegate = self

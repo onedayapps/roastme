@@ -23,8 +23,7 @@ import SwiftyJSON
  */
 class RoastAPI {
     //static let apiRoot = "https://roastme.com/"
-    static let apiRoot = "https://test-roast.herokuapp.com/"
-  //static let apiRoot = "http://192.168.1.83:8000/"
+    static let apiRoot = "http://192.168.1.83:8000/"
     
     static let serversDown = "Roastme's servers are down. Try again later!"
     static let generalError = "Oh snap! Something went wrong. Try again later!"

@@ -33,7 +33,7 @@ class LoginViewController:UIViewController{
               //  print(loginErr?.credentialsErr)
             }
         })
-        
+      // TODO: play loading animation while waiting for a response from the server
     }
 }
 
