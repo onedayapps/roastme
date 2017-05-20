@@ -23,7 +23,14 @@ import SwiftyJSON
  */
 class RoastAPI {
     //static let apiRoot = "https://roastme.com/"
-    static let apiRoot = "http://192.168.1.83:8000/"
+    
+    /* Only one of the next rwo should be active
+        1st: Local testing IP address
+        2nd: Global testing IP address
+     
+    */
+    static let apiRoot = "http://192.168.1.100:8000/"
+    //static let apiRoot = "http://172.219.59.158:83/"
     
     static let serversDown = "Roastme's servers are down. Try again later!"
     static let generalError = "Oh snap! Something went wrong. Try again later!"
