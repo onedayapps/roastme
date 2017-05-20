@@ -6,7 +6,8 @@ roastmebackend/roastmebackend/.idea
 Roastme/Pods
 Roastme/Roastme.xcodeproj/xcuserdata
 Roastme/Roastme.xcworkspace/xcuserdata
-
+nginx.conf
+roastmebackend/gunicorn.conf.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
