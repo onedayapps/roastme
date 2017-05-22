@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jnG-OK-Cp7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jnG-OK-Cp7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -153,7 +153,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="+"/>
                                 <connections>
-                                    <segue destination="cMh-K1-Duv" kind="show" id="zax-iM-aNg"/>
+                                    <segue destination="cMh-K1-Duv" kind="presentation" identifier="createRoastSeque" modalTransitionStyle="coverVertical" id="zax-iM-aNg"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roast Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpG-HJ-UDT">
@@ -241,10 +241,10 @@
             </objects>
             <point key="canvasLocation" x="2344.8000000000002" y="276.61169415292358"/>
         </scene>
-        <!--Roast Creator-->
+        <!--Create Roast Controller-->
         <scene sceneID="lnk-jd-2wr">
             <objects>
-                <viewController storyboardIdentifier="Profile" title="Roast Creator" id="cMh-K1-Duv" customClass="CreateRoastController" customModule="Roastme" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Profile" id="cMh-K1-Duv" customClass="CreateRoastController" customModule="Roastme" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xfP-fQ-jfG"/>
                         <viewControllerLayoutGuide type="bottom" id="5X1-sr-Vzn"/>
@@ -253,23 +253,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" backIndicatorImage="Gear" translatesAutoresizingMaskIntoConstraints="NO" id="CgT-2E-HrD">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.72662578379999998" blue="0.64473111049999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.72662578379999998" blue="0.64473111049999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Create Roast" id="PcW-JC-6w5">
+                                        <barButtonItem key="leftBarButtonItem" image="back" id="4gn-bi-XJQ">
+                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="backButton:" destination="cMh-K1-Duv" id="yaC-8r-5tY"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="bAn-us-E64">
+                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="doneButton:" destination="cMh-K1-Duv" id="Bbg-Vc-rYx"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IoX-vS-SjN">
-                                <rect key="frame" x="41" y="443" width="291" height="128"/>
+                                <rect key="frame" x="16" y="443" width="343" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vD-Aw-cHb">
-                                <rect key="frame" x="16" y="11" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Grill">
-                                    <color key="titleColor" red="0.1175944157" green="0.22939021509999999" blue="0.99824309349999996" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="jsZ-tT-9AB" kind="show" id="YsG-co-IhA"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oie-D9-Hhy">
                                 <rect key="frame" x="137" y="163" width="100" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -282,8 +294,8 @@
                                     <action selector="uploadRoastPicture:" destination="cMh-K1-Duv" eventType="touchUpInside" id="NFP-cA-uDb"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="itQ-eF-J2v">
-                                <rect key="frame" x="66" y="70" width="240" height="337.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="itQ-eF-J2v">
+                                <rect key="frame" x="16" y="70" width="343" height="338"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" image="YES"/>
                                 </accessibility>
@@ -291,19 +303,6 @@
                                     <constraint firstAttribute="width" secondItem="itQ-eF-J2v" secondAttribute="height" multiplier="1:1" id="GEZ-xf-tCQ"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kre-FK-TDa">
-                                <rect key="frame" x="161" y="391" width="214" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.11759441573024607" green="0.22939021513413005" blue="0.99824309349060059" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                <state key="normal" title="Roast Me">
-                                    <color key="titleColor" red="0.99824309349060059" green="0.14573662993454711" blue="0.18202410963955962" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.99824309349060059" green="0.14298866636216878" blue="0.13742318284954383" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="createRoastButton:" destination="cMh-K1-Duv" eventType="touchUpInside" id="2kW-AG-SjI"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99824309349060059" green="0.86163712017741245" blue="0.75576670439700311" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="0.72662578383642318" blue="0.64473111053604981" alpha="1" colorSpace="calibratedRGB"/>
@@ -319,14 +318,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgl-Zh-qm2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2343" y="-414"/>
+            <point key="canvasLocation" x="2341.5999999999999" y="-414.24287856071965"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Gear" width="100" height="98"/>
         <image name="Sauce" width="178" height="304"/>
+        <image name="back" width="25" height="25"/>
         <image name="salt" width="153" height="187"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YsG-co-IhA"/>
+        <segue reference="t6A-4A-icc"/>
     </inferredMetricsTieBreakers>
 </document>
