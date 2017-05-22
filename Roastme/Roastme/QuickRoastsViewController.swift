@@ -65,11 +65,17 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
 
-    @IBAction func createComment(_ sender: Any) {
+    @IBAction func addCommentButton(_ sender: Any) {
         performSegue(withIdentifier: "createCommentModal", sender: self)
     }
+
     func myVCDdidFinish(controller: CreateCommentController) {
         loadComments()
+    }
+    
+    @IBAction func shareButton(_ sender: Any) {
+        // TODO: add shareing functionality
+        print("share comment to social media")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -200,11 +206,19 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
         if let commentText = self.userComments[indexPath.row].content {
              cell.comment?.text = commentText
         }
-        if let saltValue = self.userComments[indexPath.row].salt {
-            cell.salt.text = "\(saltValue)"
-        }
+
         if let sauceValue:Int = self.userComments[indexPath.row].sauce {
             cell.sauce.text = "\(sauceValue)"
+        }
+        
+        if let usernameText = self.userComments[indexPath.row].roaster {
+            cell.username.text = usernameText
+            
+            // TODO: notworking need to fix in DJANGO
+        }
+        
+        if let dateText = self.userComments[indexPath.row].commentDate {
+            cell.date.text = dateText
         }
             
         
@@ -219,8 +233,20 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
 }
 
 class commentCell: UITableViewCell {
-  @IBOutlet weak var comment: UILabel!
-  @IBOutlet weak var sauce: UILabel!
-  @IBOutlet weak var salt: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var comment: UILabel!
+    @IBOutlet weak var sauce: UILabel!
+ 
+    @IBAction func upvoteButton(_ sender: Any) {
+        // TODO: upvote
+        print("upvote")
+    }
+    @IBAction func downvoteButton(_ sender: Any) {
+        // TODO: downvote
+        print("downvote")
+    }
+    
+
   
 }
