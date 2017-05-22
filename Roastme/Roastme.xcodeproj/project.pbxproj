@@ -28,6 +28,7 @@
 		BA5BAB171EB642A600D1A9B9 /* QuickRoastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5BAB161EB642A600D1A9B9 /* QuickRoastsViewController.swift */; };
 		BA5BAB191EB6894E00D1A9B9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5BAB181EB6894E00D1A9B9 /* NetworkManager.swift */; };
 		BA5BAB1B1EB68D5000D1A9B9 /* createRoastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5BAB1A1EB68D5000D1A9B9 /* createRoastResponse.swift */; };
+		BACE54D81ED2A1AF00668585 /* IconCredits in Resources */ = {isa = PBXBuildFile; fileRef = BACE54D71ED2A1AF00668585 /* IconCredits */; };
 		BAE40BD71EBAF8C90085E2E3 /* CreateCommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE40BD61EBAF8C90085E2E3 /* CreateCommentController.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		BA5BAB161EB642A600D1A9B9 /* QuickRoastsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickRoastsViewController.swift; sourceTree = "<group>"; };
 		BA5BAB181EB6894E00D1A9B9 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BA5BAB1A1EB68D5000D1A9B9 /* createRoastResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createRoastResponse.swift; sourceTree = "<group>"; };
+		BACE54D71ED2A1AF00668585 /* IconCredits */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IconCredits; sourceTree = "<group>"; };
 		BACF865ADF0B787D3CBB17DA /* Pods-RoastmeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoastmeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoastmeTests/Pods-RoastmeTests.release.xcconfig"; sourceTree = "<group>"; };
 		BAE40BD61EBAF8C90085E2E3 /* CreateCommentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCommentController.swift; sourceTree = "<group>"; };
 		C7C33A38F0A2A7FEAF7D2A74 /* Pods_RoastmeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoastmeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +168,7 @@
 				BA5BAB181EB6894E00D1A9B9 /* NetworkManager.swift */,
 				BA5BAB1A1EB68D5000D1A9B9 /* createRoastResponse.swift */,
 				BAE40BD61EBAF8C90085E2E3 /* CreateCommentController.swift */,
+				BACE54D71ED2A1AF00668585 /* IconCredits */,
 			);
 			path = Roastme;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			files = (
 				4774E1DF1E878EB8000D0182 /* LaunchScreen.storyboard in Resources */,
 				4774E1DC1E878EB8000D0182 /* Assets.xcassets in Resources */,
+				BACE54D81ED2A1AF00668585 /* IconCredits in Resources */,
 				4774E1DA1E878EB8000D0182 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

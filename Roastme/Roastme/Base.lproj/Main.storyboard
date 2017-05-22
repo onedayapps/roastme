@@ -207,29 +207,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Yy4-vS-jZj">
-                                <rect key="frame" x="67" y="117" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Yy4-vS-jZj">
+                                <rect key="frame" x="0.0" y="64" width="375" height="220"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pV8-Rx-YW6">
-                                <rect key="frame" x="16" y="67" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dD3-oH-Geo">
-                                <rect key="frame" x="118" y="267" width="139" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.95084993525459083" green="1" blue="0.35972633665974219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Submit Comment"/>
-                                <connections>
-                                    <action selector="submit:" destination="DlC-ld-sCN" eventType="touchUpInside" id="QVa-CC-hsN"/>
-                                </connections>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" backIndicatorImage="Gear" translatesAutoresizingMaskIntoConstraints="NO" id="dZZ-bB-aeC">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.72662578379999998" blue="0.64473111049999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.72662578379999998" blue="0.64473111049999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Add Comment" id="xQh-xn-VTD">
+                                        <barButtonItem key="leftBarButtonItem" image="Delete Filled-50" id="SY5-J7-Q5O">
+                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="backButton:" destination="DlC-ld-sCN" id="rZ6-Oe-k9f"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Submit" id="ZO9-ml-UAy">
+                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="submitButton:" destination="DlC-ld-sCN" id="7T4-kP-QGk"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.50169812590144369" blue="0.32458897014666188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -260,13 +266,13 @@
                                 <color key="tintColor" red="1" green="0.72662578379999998" blue="0.64473111049999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Create Roast" id="PcW-JC-6w5">
-                                        <barButtonItem key="leftBarButtonItem" image="back" id="4gn-bi-XJQ">
+                                        <barButtonItem key="leftBarButtonItem" image="Delete Filled-50" id="4gn-bi-XJQ">
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="backButton:" destination="cMh-K1-Duv" id="yaC-8r-5tY"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Done" id="bAn-us-E64">
+                                        <barButtonItem key="rightBarButtonItem" title="Submit" id="bAn-us-E64">
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="doneButton:" destination="cMh-K1-Duv" id="Bbg-Vc-rYx"/>
@@ -322,9 +328,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Delete Filled-50" width="25" height="25"/>
         <image name="Gear" width="100" height="98"/>
         <image name="Sauce" width="178" height="304"/>
-        <image name="back" width="25" height="25"/>
         <image name="salt" width="153" height="187"/>
     </resources>
     <inferredMetricsTieBreakers>
