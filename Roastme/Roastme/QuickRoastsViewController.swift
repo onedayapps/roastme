@@ -59,9 +59,7 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
         swipeLeft.direction = .left
         self.view.addGestureRecognizer(swipeLeft)
         
-
-
-        
+        self.roastImage.layer.cornerRadius = 15.0
     }
     
 
@@ -124,6 +122,7 @@ class QuickRoastsViewController: UIViewController, UITableViewDataSource, UITabl
                 
                 // download roast image
               if let url = URL(string: (roast?.picture)!) {
+                print(url)
                 if let data = try? Data(contentsOf: url) {
                 
                 DispatchQueue.main.async{

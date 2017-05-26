@@ -51,6 +51,15 @@ class CreateRoastController: UIViewController, UIImagePickerControllerDelegate, 
             imagePicker.allowsEditing = false
             self.present(imagePicker, animated: true, completion: nil)
             
+            /*  //this code should the user to pick an image from their photo library
+             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+             let imagePicker = UIImagePickerController()
+             imagePicker.delegate = self
+             imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+             imagePicker.allowsEditing = false  //check what options for editing exist
+             self.present(imagePicker, animated: true, completion: nil)
+ 
+            */
             //previewImage.image = [UIImagePickerControllerOriginalImage] as UIImage
             
         }

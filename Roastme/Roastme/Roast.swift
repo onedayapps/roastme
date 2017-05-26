@@ -11,7 +11,7 @@ import Foundation
 
 struct Roast{
     let roastee: Int?
-    let picture: String?
+    var picture: String?
     let caption: String?
     let creationDate: String?
     

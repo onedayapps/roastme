@@ -158,11 +158,20 @@ class RoastAPI {
             case .success:
                 if let value = response.result.value{
                     let json = JSON(value)
-                    let roast = Roast(roastee: json["roastee"].int,
+                    var roast = Roast(roastee: json["roastee"].int,
                                       picture: json["picture"].string!,
                                       caption: json["caption"].string!,
                                       creationDate: json["creationDate"].string!)
                    
+                    if var imageName = roast.picture {
+                        let urlArray = imageName.components(separatedBy: "/")
+                        imageName = urlArray[urlArray.endIndex-1]
+                        roast.picture = apiRoot + "media/roast/" + imageName
+                                                
+                    }
+                  
+                    
+                    
                     callback(roast)
                 }
             case .failure:
