@@ -44,19 +44,19 @@ class CreateRoastController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func uploadRoastPicture(_ sender: UIButton) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
-            imagePicker.allowsEditing = false
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
             
-            /*  //this code should the user to pick an image from their photo library
-             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            /*  //this code should the user to pick an image from their camera
+             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
              let imagePicker = UIImagePickerController()
              imagePicker.delegate = self
-             imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
-             imagePicker.allowsEditing = false  //check what options for editing exist
+             imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+             imagePicker.allowsEditing = true
              self.present(imagePicker, animated: true, completion: nil)
  
             */
@@ -65,7 +65,7 @@ class CreateRoastController: UIViewController, UIImagePickerControllerDelegate, 
         }
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
         previewImage.image = chosenImage
         dismiss(animated: true, completion: nil)
     }
