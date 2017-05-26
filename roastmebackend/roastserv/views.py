@@ -16,6 +16,7 @@ import time
 import os
 
 from .models import Roast, RoastComment
+from .utils import profanity_filter
 
 def index(request):
     return HttpResponse("Roastme")

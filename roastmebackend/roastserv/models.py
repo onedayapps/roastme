@@ -22,6 +22,7 @@ class Roast(models.Model):
     roastee = models.ForeignKey(User)
     picture = models.ImageField(upload_to="roast")
     caption = models.CharField(max_length=256)
+    #caption_raw = models.CharField(max_length=256)
     creationDate = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

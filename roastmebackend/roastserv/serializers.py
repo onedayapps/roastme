@@ -22,6 +22,8 @@ class RoastSerializer(serializers.ModelSerializer):
         fields = ('roastee', 'picture', 'caption', 'creationDate')
 
 class RoastCommentSerializer(serializers.ModelSerializer):
+    roaster = serializers.CharField(source='roaster.username')
+
     class Meta:
         model = RoastComment
         fields = ('content', 'upvotes', 'sauce', 'salt', 'roaster', 'roast', 'commentDate')

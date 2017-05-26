@@ -25,7 +25,7 @@ SECRET_KEY = 'wbq3&&5h8y6k_c$=b2s=6@&%$*ewcr4ol^-^+gzd2y$pw8k^=q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [get_local_ip()]  #['192.168.20.128']
+ALLOWED_HOSTS = ['127.0.0.1', get_local_ip()]  #['192.168.20.128']
 
 # Application definition
 
@@ -151,3 +151,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "roastserv/static")
 
 SITE_ID = 1
+
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
