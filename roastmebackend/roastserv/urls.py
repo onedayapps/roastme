@@ -18,7 +18,9 @@ urlpatterns = [
     url(r'^createroast/', views.CreateRoastView.as_view(), name='createroast'),
     url(r'^roasts/(?P<rid>[0-9]+)/$', views.singleRoast.as_view()),
     url(r'^comments/(?P<rid>[0-9]+)/$', views.RoastCommentList.as_view()),
-    url(r'^roastcount/', views.roastCount, name='roastCount')
+    url(r'^roastcount/', views.roastCount, name='roastCount'),
+    url(r'^comments/(?P<cid>[0-9]+)/upvote/$', views.UpvoteComment.as_view()),
+    url(r'^comments/(?P<cid>[0-9]+)/downvote/$', views.DownvoteComment.as_view())
 
 ]
 

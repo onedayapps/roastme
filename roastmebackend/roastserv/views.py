@@ -1,4 +1,7 @@
+import StringIO
+
 from django.contrib.auth.models import User, Group
+from django.core.files.base import ContentFile
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.core.files import File
@@ -10,13 +13,14 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status, generics
 from utils import profanity_filter
+from PIL import Image
 
 from .serializers import UserSerializer, RoastSerializer, GroupSerializer, RoastCommentSerializer, NewRoastCommentSerializer, roastIDSerializer
 
 import time
 import os
 
-from .models import Roast, RoastComment
+from .models import Roast, RoastComment, CommentVote
 from .utils import profanity_filter
 
 def index(request):
@@ -36,10 +40,14 @@ class CreateRoastView(APIView):
             caption=request.data["caption"]
         )
         remote_image_file = request.FILES["roastimage"]
+        im1 = Image.open(remote_image_file)
+        buffer = StringIO.StringIO()
+        im1.save(buffer, "JPEG", quality=35)
         image_format = os.path.splitext(remote_image_file.name)[1][1:]
+
         roast.picture.save(
-            "%s_%s.%s" % (request.user.username, time.strftime("%d%m%Y_%H%M%S"), image_format),
-            File(remote_image_file)
+            name="%s_%s.%s" % (request.user.username, time.strftime("%d%m%Y_%H%M%S"), image_format),
+            content=ContentFile(buffer.getvalue())
         )
         roast.save()
 
@@ -84,7 +92,7 @@ class singleRoast(generics.CreateAPIView):
 
 class RoastCommentList(generics.ListCreateAPIView):
     serializer_class = RoastCommentSerializer
-    #queryset = RoastComment.objects.all()
+
     def get_queryset(self):
         roastid = self.kwargs['rid']
         return RoastComment.objects.all().filter(roast_id=roastid)
@@ -96,7 +104,45 @@ class roastCountViewSet(viewsets.ModelViewSet):
     queryset = Roast.objects.all()
     serializer_class = roastIDSerializer
 
-# Dont Need this right now
-#class RoastCommentDetail(generics.RetrieveUpdateDestroyAPIView):
-#   queryset = RoastComment.objects.all()
-#  serializer_class = RoastCommentSerializer
+class VoteComment(APIView):
+
+    def post(self, _, cid):
+        comment = get_object_or_404(RoastComment, pk=cid)
+        current_vote = CommentVote.objects.all().filter(comment=comment).first()
+
+        addition_amount = -1 if not self._vote_sentiment else 1
+
+        if current_vote:
+            if current_vote.vote == self._vote_sentiment:
+                comment.upvotes -= addition_amount
+                current_vote.delete()
+                comment.save()
+                return Response({'msg': 'success'}, status.HTTP_200_OK)
+            else:
+                current_vote.vote = self._vote_sentiment
+                comment.upvotes += 2 * addition_amount
+                current_vote.save()
+                comment.save()
+                return Response({'msg': 'success'}, status.HTTP_200_OK)
+        else:
+            CommentVote(
+                comment=comment,
+                vote=self._vote_sentiment
+            ).save()
+
+            comment.upvotes += addition_amount
+            comment.save()
+
+        return Response({'msg': 'success'}, status.HTTP_200_OK)
+
+class UpvoteComment(VoteComment):
+
+    def __init__(self):
+        VoteComment.__init__(self)
+        self._vote_sentiment = True
+
+class DownvoteComment(VoteComment):
+
+    def __init__(self):
+        VoteComment.__init__(self)
+        self._vote_sentiment = False

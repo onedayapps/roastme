@@ -2,7 +2,7 @@ from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 from rest_framework.fields import HiddenField, CurrentUserDefault
 
-from .models import Roast, RoastComment
+from .models import Roast, RoastComment, CommentVote
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -26,7 +26,7 @@ class RoastCommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = RoastComment
-        fields = ('content', 'upvotes', 'sauce', 'salt', 'roaster', 'roast', 'commentDate')
+        fields = ('content', 'upvotes', 'sauce', 'downvotes', 'roaster', 'roast', 'commentDate')
 
 class NewRoastCommentSerializer(serializers.ModelSerializer):
     roaster = HiddenField(default=CurrentUserDefault())
@@ -41,3 +41,8 @@ class roastIDSerializer(serializers.ModelSerializer):
     class Meta:
         model = Roast
         fields = ('id',)
+
+class CommentVote(serializers.ModelSerializer):
+    class Meta:
+        model  = CommentVote
+        fields = ('comment', 'vote')

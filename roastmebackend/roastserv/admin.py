@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .models import Roast, RoastComment, RoastmeUser
+from .models import Roast, RoastComment, RoastmeUser, CommentVote
 
 
 class RoastmeUserInline(admin.StackedInline):
@@ -24,6 +24,9 @@ class RoastAdmin(admin.ModelAdmin):
 
 @admin.register(RoastComment)
 class RoastComment(admin.ModelAdmin):
-    list_display = ('content', 'upvotes', 'sauce', 'salt', 'roaster', 'roast', 'commentDate')
+    list_display = ('content', 'upvotes', 'sauce','downvotes', 'roaster', 'roast', 'commentDate')
 
 
+@admin.register(CommentVote)
+class CommentVote(admin.ModelAdmin):
+    list_display = ('comment', 'vote')
