@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SlideMenuControllerSwift
 
 // TODO: need function to get a list of roast ids based on criteria like date range(today, this week, this month, upvotes, upvotes+date range, or in sequential order) then store the roast ids in an array and walk through them when going to next roast etc
 
