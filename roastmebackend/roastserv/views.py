@@ -16,7 +16,7 @@ from .serializers import UserSerializer, RoastSerializer, GroupSerializer, Roast
 import time
 import os
 
-from .models import Roast, RoastComment
+from .models import Roast, RoastComment, CommentVote
 from .utils import profanity_filter
 
 def index(request):
@@ -84,7 +84,7 @@ class singleRoast(generics.CreateAPIView):
 
 class RoastCommentList(generics.ListCreateAPIView):
     serializer_class = RoastCommentSerializer
-    #queryset = RoastComment.objects.all()
+
     def get_queryset(self):
         roastid = self.kwargs['rid']
         return RoastComment.objects.all().filter(roast_id=roastid)
@@ -96,7 +96,45 @@ class roastCountViewSet(viewsets.ModelViewSet):
     queryset = Roast.objects.all()
     serializer_class = roastIDSerializer
 
-# Dont Need this right now
-#class RoastCommentDetail(generics.RetrieveUpdateDestroyAPIView):
-#   queryset = RoastComment.objects.all()
-#  serializer_class = RoastCommentSerializer
+class VoteComment(APIView):
+
+    def post(self, _, cid):
+        comment = get_object_or_404(RoastComment, pk=cid)
+        current_vote = CommentVote.objects.all().filter(comment=comment).first()
+
+        addition_amount = -1 if not self._vote_sentiment else 1
+
+        if current_vote:
+            if current_vote.vote == self._vote_sentiment:
+                comment.upvotes -= addition_amount
+                current_vote.delete()
+                comment.save()
+                return Response({'msg': 'success'}, status.HTTP_200_OK)
+            else:
+                current_vote.vote = self._vote_sentiment
+                comment.upvotes += 2 * addition_amount
+                current_vote.save()
+                comment.save()
+                return Response({'msg': 'success'}, status.HTTP_200_OK)
+        else:
+            CommentVote(
+                comment=comment,
+                vote=self._vote_sentiment
+            ).save()
+
+            comment.upvotes += addition_amount
+            comment.save()
+
+        return Response({'msg': 'success'}, status.HTTP_200_OK)
+
+class UpvoteComment(VoteComment):
+
+    def __init__(self):
+        VoteComment.__init__(self)
+        self._vote_sentiment = True
+
+class DownvoteComment(VoteComment):
+
+    def __init__(self):
+        VoteComment.__init__(self)
+        self._vote_sentiment = False

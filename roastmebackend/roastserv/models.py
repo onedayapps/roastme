@@ -33,9 +33,12 @@ class RoastComment(models.Model):
     content_raw = models.CharField(max_length=256)
     upvotes = models.IntegerField(default=0)
     sauce = models.IntegerField(default=0)
-    salt = models.IntegerField(default=0)
+    downvotes = models.IntegerField(default=0)
     roaster = models.ForeignKey(User)
     roast = models.ForeignKey(Roast)
     commentDate = models.DateTimeField(auto_now_add=True)
 
+class CommentVote(models.Model):
+    comment = models.ForeignKey(RoastComment)
+    vote = models.BooleanField()
 
