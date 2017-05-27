@@ -1,4 +1,7 @@
+import StringIO
+
 from django.contrib.auth.models import User, Group
+from django.core.files.base import ContentFile
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.core.files import File
@@ -10,6 +13,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status, generics
 from utils import profanity_filter
+from PIL import Image
 
 from .serializers import UserSerializer, RoastSerializer, GroupSerializer, RoastCommentSerializer, NewRoastCommentSerializer, roastIDSerializer
 
@@ -36,10 +40,14 @@ class CreateRoastView(APIView):
             caption=request.data["caption"]
         )
         remote_image_file = request.FILES["roastimage"]
+        im1 = Image.open(remote_image_file)
+        buffer = StringIO.StringIO()
+        im1.save(buffer, "JPEG", quality=35)
         image_format = os.path.splitext(remote_image_file.name)[1][1:]
+
         roast.picture.save(
-            "%s_%s.%s" % (request.user.username, time.strftime("%d%m%Y_%H%M%S"), image_format),
-            File(remote_image_file)
+            name="%s_%s.%s" % (request.user.username, time.strftime("%d%m%Y_%H%M%S"), image_format),
+            content=ContentFile(buffer.getvalue())
         )
         roast.save()
 
