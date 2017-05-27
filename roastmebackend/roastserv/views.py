@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.core.files import File
 
@@ -9,6 +9,7 @@ from rest_framework import permissions, viewsets
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status, generics
+from utils import profanity_filter
 
 from .serializers import UserSerializer, RoastSerializer, GroupSerializer, RoastCommentSerializer, NewRoastCommentSerializer, roastIDSerializer
 
@@ -44,15 +45,23 @@ class CreateRoastView(APIView):
 
         return Response({'msg': 'success'}, status.HTTP_200_OK)
 
-class NewRoastComment(generics.CreateAPIView):
-    """
-    curl -X PUT -H "Authorization: Token c7eb4a877716f7d630ed34a3aed640ff0b360a7f" -f "content=firstcomment"  "roast=1"
-    """
 
-    query_set = RoastComment.objects.all()
-    serializer_class = NewRoastCommentSerializer
+
+class NewRoastComment(APIView):
+    """
+    curl -X PUT -H "Authorization: Token bae7f50e8870d6e0fcec4cd07485942014b625c2" -f "content=firstcomment"  "roast=1"
+    """
     permission_classes = (permissions.IsAuthenticated,)
 
+    def put(self, request):
+        roast = get_object_or_404(Roast, pk=int(request.data["roast"]))
+        RoastComment(
+            content=profanity_filter(request.data["content"]),
+            content_raw=request.data["content"],
+            roaster=request.user,
+            roast=roast
+        ).save()
+        return Response({'msg': 'success'}, status.HTTP_200_OK)
 
 class UserViewSet(viewsets.ModelViewSet):
 

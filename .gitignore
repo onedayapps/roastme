@@ -1,7 +1,4 @@
-roastmebackend/.idea
-roastmebackend/roastmebackend/.idea
-.idea
-.idea/
+**/.idea
 .DS_Store
 Roastme/Pods
 Roastme/Roastme.xcodeproj/xcuserdata

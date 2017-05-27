@@ -22,7 +22,6 @@ class Roast(models.Model):
     roastee = models.ForeignKey(User)
     picture = models.ImageField(upload_to="roast")
     caption = models.CharField(max_length=256)
-    #caption_raw = models.CharField(max_length=256)
     creationDate = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -31,6 +30,7 @@ class Roast(models.Model):
 
 class RoastComment(models.Model):
     content = models.CharField(max_length=256)
+    content_raw = models.CharField(max_length=256)
     upvotes = models.IntegerField(default=0)
     sauce = models.IntegerField(default=0)
     salt = models.IntegerField(default=0)
